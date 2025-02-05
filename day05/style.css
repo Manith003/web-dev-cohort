@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: DM sans;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    position: relative;
+}
+
+.nav{
+    background-color: #323232;
+    padding: 3px;
+}
+.nav h1{
+    font-size: 10px;
+    font-weight: 300;
+    text-align: center;
+    color: white;
+}
+.main-nav{
+    background-color: #F0F0F0;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    border-bottom: 0.5px solid #CACACA;
+
+}
+.main-nav a{
+    text-align: center;
+    font-size: 1.2vw;
+    color: #323232;
+    text-decoration: none;
+    padding: 5px;
+    font-weight: 500;
+}
+#side{
+    background-color: #EBEBEB;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#side .first{
+    font-size: 10px;
+    letter-spacing: -0.5px;
+    padding: 5px;
+    font-weight: 500;
+   
+}
+#side .lists{
+    margin-top: -3px;
+    margin-left: 5px;
+    padding-bottom: 3px;
+    font-size: 1.5vw;
+    letter-spacing: -0.5px; 
+    /* background-color: red; */
+    width: 87%;
+    border-bottom: 0.5px dotted #bebebe;
+    color: #717171;
+}
+#side .lists:nth-last-child(1){
+    border-bottom: none;
+}
+
+#side .lists:hover{
+    cursor: pointer;
+}
+
+#content{
+    border-top: 0.5px solid #CACACA;
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    top: 14%;
+    left: 20%;
+}
+
+#content h1{
+    font-size: 9px;
+    padding: 5px;
+}
+
+.imgs{
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.imgs img{
+    height: 130px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    gap: 50px;
+}
+
+#content p{
+    font-size: 5px;
+    padding: 5px;
+}
+#content h3{
+    font-size: 10px;
+    padding: 5px;
+    margin-top: -10px;
+}
+
+#content ul{
+    padding-left: 27px;
+}
+
+#content li{
+    font-size: 1.2vw;
+}
+#footer{
+    background-color: #323232;
+    color: white;
+    font-size: 1.1vw;
+    text-align: center;
+    padding: 7px;
+}
