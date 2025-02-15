@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gilroy";
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+
+}
+
+.main{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    /* background-color: wheat; */
+}
+
+.heading h1{
+    padding-top: 3%;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    text-align: center;
+    /* background-color: red; */
+}
+.heading p{
+    font-size: 1rem;
+    padding-top: 1px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.content{
+    width: 100%;
+    /* background-color: red; */
+    padding: 3%;;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-gap: 20px;
+}
+.products{
+    height: 65vh;
+    width: 100%;
+    /* background-color: blue; */
+    border-radius: 3%;
+    border: 1px solid #D8D8D8;
+    padding: 5%;
+}
+
+.products .img{
+    height: 46vh;
+    width: 100%;
+    /* background-color: red; */
+}
+
+.img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.products h3{
+    text-align: center;
+    padding-top: 5%;
+}
+.products p{
+    text-align: center;
+    padding: 2%;
+}
+.products h4{
+    text-align: center;
+    font-size: 5.3vw;
+}
+
+.footer{
+    height: 10vh;
+    width: 100%;
+    /* background-color: blue; */
+    padding: 0 3%;
+}
+
+.foot{
+    width: 100%;
+    /* background-color: red; */
+    border-top: 0.5px solid #D8D8D8;
+}
+
+.foot h3{
+    text-align: center;
+    color: #757070;
+    padding-top: 1.5%;
+}
+
+
+ @media(min-width: 768px){
+    .products h4{
+        font-size: 2.6vw;
+        padding: 2%;
+    }
+    .products{
+        height: 64vh;
+    }
+} 
+
+@media(min-width: 1024px){
+    .products h4{
+        font-size: 2.1vw;
+    }
+    .products{
+        height: 63vh;
+    }
+} 
+
+@media(min-width: 1200px){
+    .products h4{
+        font-size: 1.7vw;
+    }
+    .products{
+        height: 67vh;
+    }
+} 
+
+@media(max-width: 768px){ /* adjust the product page accroding the screen*/
+    .products{
+        height: 69vh;
+    }
+
+    .foot h3{
+        padding-top: 5.5%;
+    }
+} 
