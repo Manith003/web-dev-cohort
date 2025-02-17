@@ -329,11 +329,12 @@ main {
 }
 .view-4 .card .cards .heading {
   position: absolute;
-  gap: 6rem;
+  width: 80%;
   bottom: 3rem;
   font-size: 0.9rem;
   font-weight: 100;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   background: rgba(0, 0, 0, 0.1);
   -webkit-backdrop-filter: blur(10px);
@@ -365,7 +366,7 @@ main {
   .view-4 .card .cards {
     display: flex;
     justify-content: center;
-    gap: rem;
+    gap: 1rem;
   }
   .view-4 .card .cards .heading {
     width: 87%;

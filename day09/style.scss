@@ -378,16 +378,18 @@ main{
         }
         .heading{
             position: absolute;
-            gap: 6rem;
+            width: 80%;
             bottom: 3rem;
             font-size: 0.9rem;
             font-weight: 100;
             display: flex;
+            justify-content: space-between;
             align-items: center;
             background:rgba(0,0,0,0.1);
             backdrop-filter: blur(10px);
             padding: 0.5rem 2rem;
             border: 0.1rem solid rgba(175, 159, 135, 0.5);
+            // background-color: red;
 
             h2{
                 font-size: 1.5rem;
@@ -421,12 +423,13 @@ main{
             .cards{
                 display: flex;
                 justify-content: center;
-                gap: rem;
+                gap: 1rem;
                 .heading{
                     width: 87%;
                     display: flex;
                     justify-content: space-between;
                     padding: 1.3rem 1rem;
+                    
                 }
             }
         }
