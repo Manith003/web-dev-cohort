@@ -28,6 +28,15 @@
                 <button>LET'S TALK</button>
             </div> 
 
+            <div class="res">
+                <a href="">SERVICES</a>
+                <a href="">WORK</a>
+                <a href="">STUDIO</a>
+                <a href="">BLOG</a>
+                <a href="">PAGES</a>
+                <button>LET'S TALK</button>
+            </div> 
+
             <div class="right">
                 <img class="menu" src="./assets/icons8-menu-50.png" alt="">
             </div>
@@ -85,5 +94,17 @@
 
 
     </main>
+
+    <script>
+        var menu = document.querySelector('.menu');
+        var res = document.querySelector('.res');
+        menu.addEventListener('click', function() {
+            if (res.style.display === 'none') {
+                res.style.display = 'flex';
+            } else {
+                res.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
