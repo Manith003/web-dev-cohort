@@ -97,36 +97,36 @@ main {
   justify-content: space-between;
 }
 .view-2 .content .services .branding p {
-  font-size: 2rem;
+  font-size: 2em;
   letter-spacing: -0.5px;
-  font-weight: 400;
+  font-weight: 300;
 }
 .view-2 .content .services .camp {
   display: flex;
   justify-content: space-between;
 }
 .view-2 .content .services .camp p {
-  font-size: 2rem;
+  font-size: 2em;
   letter-spacing: -0.5px;
-  font-weight: 400;
+  font-weight: 300;
 }
 .view-2 .content .services .ecomm {
   display: flex;
   justify-content: space-between;
 }
 .view-2 .content .services .ecomm p {
-  font-size: 2rem;
+  font-size: 2em;
   letter-spacing: -0.5px;
-  font-weight: 400;
+  font-weight: 300;
 }
 .view-2 .content .services .social {
   display: flex;
   justify-content: space-between;
 }
 .view-2 .content .services .social p {
-  font-size: 2rem;
+  font-size: 2em;
   letter-spacing: -0.5px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 @media (min-width: 1024px) {
