@@ -1,16 +1,11 @@
+function outer(){
+    let count = 0;
+    return function inner(){
+        count++;
+        console.log(count);
+    };
+}
 
-
-var Shery = (function SheryLibrary(){
-    return{
-        imageEffect: function() {
-            console.log("Image Effect");
-            
-        },
-        mouseMover: function() {
-            console.log("Mouse Mover");
-        }
-    }
-})();
-
-Shery.imageEffect();
-Shery.mouseMover();
+const counter = outer();
+counter(); // 1
+counter(); // 2
