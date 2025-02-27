@@ -339,7 +339,7 @@ main {
 
 @media (min-width: 1024px) {
   main .view-4 {
-    margin-top: 10rem;
+    margin-top: 8rem;
     flex-direction: row;
   }
   main .view-4 .content3 {
