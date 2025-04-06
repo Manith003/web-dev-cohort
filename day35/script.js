@@ -53,19 +53,19 @@
 // console.log(arr);
 
 //taking user input in an array and print sum of elements in array.
-// const prompt = require("prompt-sync")();
+const prompt = require("prompt-sync")();
 
-// let size = Number(prompt("Enter the size of array : "));
-// let arr = new Array(size);
-// let sum = 0;
+let size = Number(prompt("Enter the size of array : "));
+let arr = new Array(size);
+let sum = 0;
 
-// for (let i = 0; i < arr.length; i++) {
-//   arr[i] = Number(prompt("Enter the element : "));
-//   sum = sum + arr[i];
-// }
+for (let i = 0; i < arr.length; i++) {
+  arr[i] = Number(prompt("Enter the element : "));
+  sum = sum + arr[i];
+}
 
-// console.log("Array elements are : ", arr);
-// console.log("Sum of array elements are : ", sum);
+console.log("Array elements are : ", arr);
+console.log("Sum of array elements are : ", sum);
 
 // find max element in an array
 
