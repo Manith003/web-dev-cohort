@@ -1,0 +1,191 @@
+@font-face {
+  font-family: "Gilroy";
+  src: url("./gilroy/Gilroy-Medium.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Gilroy";
+  /* background-color: black; */
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  /* background-color: #ffffff;
+     */
+  background-color: black;
+
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 28rem;
+  width: 20rem;
+  flex-wrap: wrap;
+  position: relative;
+  border-radius: 1.5rem;
+  background-image: url("https://images.unsplash.com/photo-1731484395517-62f2f0374c4a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2Zlc3Npb25hbCUyMG1vZGVsfGVufDB8fDB8fHww");
+  background-size: cover;
+  position: relative;
+}
+
+.first {
+  padding-top: 1.5rem;
+}
+
+.mini-heading1 {
+  border-radius: 0.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mini-heading1 h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+  background: #ffffff7c;
+  backdrop-filter: blur(15px);
+  padding: 0.2rem 1rem;
+  border-radius: 0.4rem;
+}
+
+.heading1 h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.second {
+  padding-top: 1.5rem;
+  color: white;
+  width: 100%;
+  height: 50%;
+}
+
+.blur {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 0 0 1.5rem 1.5rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.blur-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.473);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  -webkit-mask-image: linear-gradient(
+    to top,
+    #ffffffa4,
+    rgba(255, 255, 255, 0)
+  );
+  mask-image: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0));
+
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.profile {
+  width: 60%;
+  height: 40%;
+  padding: 0.3rem;
+  display: flex;
+  /* background-color: blue; */
+  align-items: center;
+  z-index: 99;
+}
+
+.logoimg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logoimg img {
+  width: 30%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 50%;
+  object-position: top;
+}
+
+.profile-text h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+.profile-text p {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.button {
+  height: 40%;
+  width: 40%;
+  padding: 0.4rem;
+  display: flex;
+  /* background-color: red; */
+  align-items: center;
+  z-index: 99;
+}
+
+.btn {
+  width: 100%;
+  padding: 0.8rem 0.1rem;
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: center;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.btn:active{
+    scale: 0.95;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+  }
+  
+  .blink {
+    animation: blink 1s infinite;
+  }
