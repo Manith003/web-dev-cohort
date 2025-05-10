@@ -1,0 +1,152 @@
+@font-face {
+  font-family: "Gilroy";
+  src: url("./gilroy/Gilroy-Medium.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gilroy";
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  /* background-color: black; */
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 50%;
+  /* background-color: red; */
+  padding: 1rem;
+}
+.container h1 {
+  font-size: 2rem;
+}
+
+.todo {
+  margin-top: 0.5rem;
+}
+.todo input {
+  width: 80%;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.todo input:focus {
+  outline: none;
+  border: 1px solid #000;
+}
+.todo button {
+  padding: 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #3d7c01;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:active {
+  scale: 0.95;
+}
+
+ul li {
+  list-style: none;
+  padding: 0.5rem 2.3rem;
+  position: relative;
+  user-select: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  top: 13px;
+  left: 8px;
+}
+
+ul li.checked {
+  text-decoration: line-through;
+}
+ul li.checked::before {
+  background-image: url("./check.png");
+  background-size: cover;
+  background-position: center;
+}
+
+ul li span{
+    position: absolute;
+    right: 20%;
+    font-size: 1.7rem;
+    color: #ff0000;
+    cursor: pointer;
+}
+
+ 
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+  .todo input {
+    width: 80%;
+  }
+    
+}
+
+@media (max-width: 480px) {
+    
+  .container {
+    width: 100%;
+    position: absolute;
+    top: 2rem;
+  }
+    .container h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .todo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .todo button {
+        width: 20%;
+        margin-top: -1rem;
+        margin-left: 0.5rem;
+    }
+    
+  .todo input {
+    width: 70%;
+
+  }
+
+  ul li span{
+    right: 10%;
+    font-size: 2rem;
+  }
+  ul li {
+    font-size: 1.5rem;
+    padding: 0.5rem 2.5rem;
+  }
+    ul li::before {
+        top: 14px;
+        left: 15px;
+    }
+}

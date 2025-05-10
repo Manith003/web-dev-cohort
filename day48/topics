@@ -1,0 +1,42 @@
+topics of day48:
+
+ 1. Local Storage
+ 2. Session Storage
+ 3. cookies - just introduction afterward we see in backend for better understanding.
+
+ 4. window object
+ 5. child nodes
+ 6. classList
+
+
+notes 
+
+1. location.href;
+2. location.reload();
+3. //want to know current location use let a = location.href
+4. history.back();
+5. history.forword();
+6. navigator.userAgnt
+7. navigator.onLine; //it check internet status like inline or offline
+
+8. local Storage - browser ki Storage
+localstorage.getItem('key', 'value')
+localstorage.setItem('key', 'value')
+localstorage.clear()
+localstorage.removeItem()   
+
+
+9. SessionStorage
+sessionstorage.getItem('key', 'value')
+sessionstorage.setItem('key', 'value')
+sessionstorage.clear()
+sessionstorage.removeItem()
+
+
+10.classList - classList ki madad se hum class ko add, remove, toggle kar sakte hain.
+classList.add('className')
+classList.remove('className')
+classList.toggle('className')
+
+
+make todo list
