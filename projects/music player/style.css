@@ -1,0 +1,137 @@
+@font-face {
+    font-family: "Gilroy";
+    src: url('./gilroy/Gilroy-Medium.ttf') format('truetype');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Gilroy";
+}
+
+#container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    /* height: 50%; */
+    width: 30%;
+    background-color: #e2dcdc77;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.459);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#player{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+button{
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: #2b2b2b;
+    color: white;
+    font-size: 16px;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+button:active{
+    scale: 0.95;
+}
+
+#btn{
+    /* background-color: rebeccapurple; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+#progressBar {
+  width: 100%;
+  height: 3px;
+  margin-top: 10px;
+}
+
+#song-title{
+    font-size: 2rem;
+    text-align: center;
+}
+
+#song-artist{
+    font-size: 1rem;
+    text-align: center;
+    color: #363636;
+}
+
+@media (max-width: 600px) {
+    #container {
+        width: 90%;
+    }
+    button {
+        width: 80px;
+        height: 35px;
+        font-size: 14px;
+    }
+    #song-title {
+        font-size: 1.5rem;
+    }
+    #song-artist {
+        font-size: 0.9rem;
+    }
+    
+}
+
+.burger{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.726);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    opacity: 0;
+    pointer-events: none; 
+}
+
+.overlay h5{
+    position: absolute;
+    top: 5%;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}

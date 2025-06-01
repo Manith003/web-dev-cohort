@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>music player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div class="overlay">
+            <ul>
+            </ul>
+            <h5>click the screen to close the menu</h5>
+        </div>
+
+        <div class="burger"><img src="./menu-outline.svg" alt=""></div>
+        <div id="songs">
+            <h2 id="song-title">song Title</h2>
+            <h2 id="song-artist">song Artist</h2>
+            <audio id="audioPlayer" controls style="display: none;"></audio>
+        </div>
+        <div id="player">
+            <input type="range" id="progressBar" value="0" min="0" max="100">
+            <div id="btn">
+                <button id="prev">Previous</button>
+                <button id="play">Play</button>
+                <button id="pause">Pause</button>
+                <button id="next">Next</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
