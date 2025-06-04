@@ -73,3 +73,18 @@ button{
     cursor: pointer;
     width: 100%;
 }
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+    .input, .output {
+        width: 100%;
+    }
+    .city-input {
+        width: 100%;
+    }
+    button {
+        width: 100%;
+    }
+}
