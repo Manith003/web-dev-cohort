@@ -1,0 +1,320 @@
+:root {
+  --primary: #27374dda;
+  --secondary: #526d82;
+  --accent: #9db2bf;
+  --background: #dde6ed;
+  --text: #27374d;
+  --red: rgba(255, 0, 0, 0.808);
+}
+
+@font-face {
+  font-family: "light";
+  src: url(./AeonikTRIAL-Light.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "regular";
+  src: url(./AeonikTRIAL-Regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: "bold";
+  src: url(./AeonikTRIAL-Bold.otf) format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--text);
+  font-family: "light";
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  background-color: var(--background);
+}
+
+/* nav {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background-color: var(--primary);
+  z-index: 99;
+} */
+
+section.allElems {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--background);
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  /* justify-content: center; */
+  gap: 1rem;
+  position: absolute;
+}
+
+.elems {
+  background-color: var(--accent);
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  height: 250px;
+  width: 230px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.elems:active {
+  scale: 0.97;
+}
+
+.elems img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.elems h2 {
+  position: absolute;
+  bottom: 1%;
+  width: 100%;
+  font-family: "regular";
+  font-size: 1rem;
+  padding: 0.3rem;
+  text-align: center;
+  color: var(--text);
+}
+
+.fullElems {
+  height: 100%;
+  width: 100%;
+  background-color: var(--background);
+  padding: 1rem;
+  display: none;
+  position: absolute;
+  overflow: hidden;
+}
+
+.back {
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  padding: 0.5rem 0.6rem;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 50%;
+}
+
+.back:active {
+  scale: 0.97;
+}
+
+ion-icon {
+  font-size: 1.1rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* adding todo list styles --------------------------------------------- */
+
+.todo-list-fullpage {
+  padding-bottom: 4rem;
+}
+
+.todo-list-fullpage h1 {
+  font-family: "bold";
+  font-size: 2rem;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.todo-list-fullpage .todo-container {
+  height: 100%;
+  width: 100%;
+  margin-top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-list-fullpage .todo-container .addTask {
+  height: 100%;
+  width: 33%;
+  background-color: var(--accent);
+  border-radius: 3%;
+}
+
+.todo-list-fullpage .todo-container .addTask form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+.todo-container .addTask form input[type="text"],
+textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: "regular";
+  outline: none;
+}
+
+.mark-imp {
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mark-imp input {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+}
+
+.todo-container .addTask #addTaskButton,
+#removeAllTasksButton {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary);
+  color: white;
+  font-family: "regular";
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.todo-container .addTask #addTaskButton:active {
+  scale: 0.97;
+}
+.todo-container .addTask #removeAllTasksButton:active {
+  scale: 0.97;
+}
+
+.todo-list-fullpage .todo-container .allTasks {
+  height: 100%;
+  width: 65%;
+  background-color: var(--accent);
+  border-radius: 3%;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.todo-list-fullpage .todo-container .allTasks .task {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--background);
+  padding: 0.7rem 1.7rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.task h2 {
+  font-family: "regular";
+  font-size: 1.5rem;
+  color: var(--text);
+}
+.task h2 span {
+  font-family: "regular";
+  font-size: 0.7rem;
+  position: absolute;
+  top: 0.5rem;
+  color: var(--red);
+}
+
+.taskDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task button {
+  background-color: rgba(0, 128, 0, 0.788);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.task button:active {
+  scale: 0.97;
+}
+
+/* adding daily planner styles -------------------------------------------*/
+
+.daily-planner-fullpage {
+  padding-bottom: 4rem;
+}
+
+.daily-planner-fullpage h1 {
+  font-family: "bold";
+  font-size: 2rem;
+  color: var(--text);
+}
+
+.daily-planner-fullpage .day-planner {
+  background-color: var(--accent);
+  height: 100%;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 1rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  overflow: auto;
+  border-radius: 5px;
+}
+
+.daily-planner-fullpage .day-planner .day-planner-time {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  position: relative;
+  width: 49%;
+}
+
+.day-planner .day-planner-time p {
+  position: absolute;
+  top: 12%;
+  left: 4.5%;
+  font-size: 1.3rem;
+}
+
+.day-planner .day-planner-time input[type="text"] {
+  width: 100%;
+  padding: 1.8rem 0rem 0.5rem 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: "regular";
+  outline: none;
+  font-size: 1.2rem;
+}
+
+

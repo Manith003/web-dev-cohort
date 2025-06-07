@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM based Advance Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <nav></nav>
+        <section class="allElems">
+            <div class="todo elems" id="0">
+                <img src="https://img.freepik.com/free-psd/notes-icon-design_23-2151879096.jpg?uid=R203393574&ga=GA1.1.205430864.1749267978&semt=ais_hybrid&w=740"
+                    alt="" srcset="">
+                <h2>To Do List</h2>
+            </div>
+            <div class="daily elems" id="1">
+                <img src="https://img.freepik.com/free-psd/3d-rendering-ui-icon_23-2149182278.jpg?uid=R203393574&ga=GA1.1.205430864.1749267978&semt=ais_hybrid&w=740"
+                    alt="" srcset="">
+                <h2>Daily Planner</h2>
+            </div>
+            <div class="Motivation elems" id="2">
+                <img src="https://img.freepik.com/free-psd/business-man-illustration_1150-59062.jpg?uid=R203393574&ga=GA1.1.205430864.1749267978&semt=ais_hybrid&w=740"
+                    alt="" srcset="">
+                <h2>Motivation</h2>
+            </div>
+            <div class="Pomodoro elems" id="3">
+                <img src="https://img.freepik.com/free-psd/3d-transparent-hourglass_23-2148938928.jpg?uid=R203393574&ga=GA1.1.205430864.1749267978&semt=ais_hybrid&w=740"
+                    alt="" srcset="">
+                <h2>Pomodoro Timer</h2>
+            </div>
+            <div class="goals elems" id="4">
+                <img src="https://img.freepik.com/free-psd/3d-dart-board-target-with-bullseye-arrow_23-2148938923.jpg?uid=R203393574&ga=GA1.1.205430864.1749267978&semt=ais_hybrid&w=740"
+                    alt="" srcset="">
+                <h2>Daily Goals</h2>
+            </div>
+        </section>
+
+        <section class="fullElems todo-list-fullpage">
+            <button class="back" id="0"><ion-icon name="close-outline"></ion-icon></button>
+            <h1>Your Personalised Todo List</h1>
+            <div class="todo-container">
+                <div class="addTask">
+                    <form>
+                        <input type="text" id="taskInput" placeholder="Add a new task..." required>
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Add task details..."></textarea>
+                        <div class="mark-imp">
+                            <input type="checkbox" id="importantCheckbox">
+                            <label for="importantCheckbox">Mark as Important!</label>
+                        </div>
+                        <button type="submit" id="addTaskButton">Add Task</button>
+                        <button type="button" id="removeAllTasksButton">Remove All Tasks</button>
+                    </form>
+                </div>
+                <div class="allTasks"></div>
+            </div>
+        </section>
+
+        <section class="fullElems daily-planner-fullpage">
+            <button class="back" id="1"><ion-icon name="close-outline"></ion-icon></button>
+            <h1>Plan your Day to be more Productive </h1>
+            <div class="day-planner">
+                
+
+            </div>
+        </section>
+
+        <section class="fullElems motivation-fullpage">
+            <button class="back" id="2"><ion-icon name="close-outline"></ion-icon></button>
+            <h1>Motivation</h1>
+        </section>
+        <section class="fullElems pomodoro-fullpage">
+            <button class="back" id="3"><ion-icon name="close-outline"></ion-icon></button>
+            <h1>Pomodoro Timer</h1>
+        </section>
+        <section class="fullElems goals-fullpage">
+            <button class="back" id="4"><ion-icon name="close-outline"></ion-icon></button>
+            <h1>Daily Goals</h1>
+        </section>
+
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.2.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.2.2/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
