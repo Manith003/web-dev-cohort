@@ -317,4 +317,90 @@ textarea {
   font-size: 1.2rem;
 }
 
+/*adding motivation styles -------------------------------------------*/
+.motivation-fullpage {
+  position: relative;
+}
 
+.motivation-fullpage-container{
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 12.5%;
+}
+
+.motivation-fullpage-container .motivation-container {
+  width: 70%;
+  background-color: var(--accent);
+  border-radius: 40px;
+  border: none;
+  position: relative;
+  z-index: 1;
+}
+
+.motivation-fullpage-container .motivation-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 90%;
+  top: 50%;
+  border-radius: 40px;
+  background-color: var(--primary);
+  scale: 1.15;
+  z-index: -1; 
+  filter: blur(100px);
+}
+
+.motivation-fullpage .motivation-container .motivation-wrapper {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  border-radius: 40px;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.motivation-fullpage .motivation-container .motivation-wrapper img {
+  object-fit: cover;
+  position: absolute;
+  top: 30%;
+  right: 3%;
+  height: 45px;
+  opacity: 0.7;
+}
+
+.motivation-1 {
+  background-color: var(--background);
+  padding: 1.1rem;
+  border-radius: 25px;
+}
+.motivation-1 h2 {
+  font-family: "regular";
+  font-size: 1.6rem;
+  color: var(--text);
+  text-align: center;
+}
+
+.motivation-2 {
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+.motivation-2 h1 {
+  font-family: "regular";
+  font-size: 1.5rem;
+  color: var(--background);
+  text-align: center;
+}
+
+.motivation-3 {
+  padding: 1rem;
+}
+.motivation-3 h2 {
+  font-family: "regular";
+  font-size: 1.4rem;
+  color: var(--background);
+  text-align: right;
+}
