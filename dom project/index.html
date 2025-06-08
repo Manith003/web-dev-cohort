@@ -10,32 +10,48 @@
 
 <body>
     <main>
-        <nav></nav>
         <section class="allElems">
-            <div class="todo elems" id="0">
-                <img src="https://img.freepik.com/free-psd/notes-icon-design_23-2151879096.jpg?uid=R203393574&ga=GA1.1.205430864.1749267978&semt=ais_hybrid&w=740"
-                    alt="" srcset="">
-                <h2>To Do List</h2>
+            <nav>
+                <h2>Productivity Dashboard</h2>
+                <div class="theme">
+                    <button class="change-theme">Change Theme</button>
+                </div>
+            </nav>
+            <div class="header">
+                <div class="header1">
+                    <h2></h2>
+                    <h1></h1>
+                    <h4>Chennai</h4>
+                </div>
+                <div class="header2">
+                    <h2>33°C</h2>
+                    <h4>Light rain</h4>
+                    <h3 class="precipitation">Precipitation: 35%</h3>
+                    <h3 class="humidity">Humidity: 60%</h3>
+                    <h3 class="wind">Wind Speed: 10 km/h</h3>
+                </div>
             </div>
-            <div class="daily elems" id="1">
-                <img src="https://img.freepik.com/free-psd/3d-rendering-ui-icon_23-2149182278.jpg?uid=R203393574&ga=GA1.1.205430864.1749267978&semt=ais_hybrid&w=740"
-                    alt="" srcset="">
-                <h2>Daily Planner</h2>
-            </div>
-            <div class="Motivation elems" id="2">
-                <img src="https://img.freepik.com/free-psd/business-man-illustration_1150-59062.jpg?uid=R203393574&ga=GA1.1.205430864.1749267978&semt=ais_hybrid&w=740"
-                    alt="" srcset="">
-                <h2>Motivation</h2>
-            </div>
-            <div class="Pomodoro elems" id="3">
-                <img src="https://img.freepik.com/free-psd/3d-transparent-hourglass_23-2148938928.jpg?uid=R203393574&ga=GA1.1.205430864.1749267978&semt=ais_hybrid&w=740"
-                    alt="" srcset="">
-                <h2>Pomodoro Timer</h2>
-            </div>
-            <div class="goals elems" id="4">
-                <img src="https://img.freepik.com/free-psd/3d-dart-board-target-with-bullseye-arrow_23-2148938923.jpg?uid=R203393574&ga=GA1.1.205430864.1749267978&semt=ais_hybrid&w=740"
-                    alt="" srcset="">
-                <h2>Daily Goals</h2>
+            <div class="allFeatures">
+                <div class="todo elems" id="0">
+                    <img src="https://img.freepik.com/free-psd/notes-icon-design_23-2151879096.jpg?uid=R203393574&ga=GA1.1.205430864.1749267978&semt=ais_hybrid&w=740"
+                        alt="" srcset="">
+                    <h2>To Do List</h2>
+                </div>
+                <div class="daily elems" id="1">
+                    <img src="https://img.freepik.com/free-psd/3d-rendering-ui-icon_23-2149182278.jpg?uid=R203393574&ga=GA1.1.205430864.1749267978&semt=ais_hybrid&w=740"
+                        alt="" srcset="">
+                    <h2>Daily Planner</h2>
+                </div>
+                <div class="Motivation elems" id="2">
+                    <img src="https://img.freepik.com/free-psd/business-man-illustration_1150-59062.jpg?uid=R203393574&ga=GA1.1.205430864.1749267978&semt=ais_hybrid&w=740"
+                        alt="" srcset="">
+                    <h2>Motivation</h2>
+                </div>
+                <div class="Pomodoro elems" id="3">
+                    <img src="https://img.freepik.com/free-psd/3d-transparent-hourglass_23-2148938928.jpg?uid=R203393574&ga=GA1.1.205430864.1749267978&semt=ais_hybrid&w=740"
+                        alt="" srcset="">
+                    <h2>Pomodoro Timer</h2>
+                </div>
             </div>
         </section>
 
@@ -70,27 +86,33 @@
             <h1>Motivation</h1>
             <div class="motivation-fullpage-container">
                 <div class="motivation-container">
-                <div class="motivation-wrapper">
-                    <img src="./icons8-quote-50.png" alt="">
-                    <div class="motivation-1">
-                        <h2>Quote of the Day</h2>
+                    <div class="motivation-wrapper">
+                        <img src="./icons8-quote-50.png" alt="">
+                        <div class="motivation-1">
+                            <h2>Quote of the Day</h2>
+                        </div>
+                        <div class="motivation-2">
+                            <h1></h1>
+                        </div>
+                        <div class="motivation-3">
+                            <h2></h2>
+                        </div>
                     </div>
-                    <div class="motivation-2"><h1></h1></div>
-                    <div class="motivation-3"><h2></h2></div>
                 </div>
-            </div>
             </div>
         </section>
 
         <section class="fullElems pomodoro-fullpage">
             <button class="back" id="3"><ion-icon name="close-outline"></ion-icon></button>
             <h1>Pomodoro Timer</h1>
+            <h4 class="session">Work Session</h4>
+            <div class="pomo-timer">
+                <h1>25:00</h1>
+                <button class="start-timer">Start</button>
+                <button class="pause-timer">Pause</button>
+                <button class="reset-timer">Reset</button>
+            </div>
         </section>
-        <section class="fullElems goals-fullpage">
-            <button class="back" id="4"><ion-icon name="close-outline"></ion-icon></button>
-            <h1>Daily Goals</h1>
-        </section>
-
     </main>
 
     <script type="module" src="https://unpkg.com/ionicons@7.2.2/dist/ionicons/ionicons.esm.js"></script>

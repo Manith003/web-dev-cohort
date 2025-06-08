@@ -5,6 +5,9 @@
   --background: #dde6ed;
   --text: #27374d;
   --red: rgba(255, 0, 0, 0.808);
+  --white: #ffffff;
+  --black: #00000005;
+  --green: rgba(0, 128, 0, 0.699);
 }
 
 @font-face {
@@ -25,6 +28,7 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   color: var(--text);
   font-family: "light";
@@ -41,25 +45,118 @@ main {
   background-color: var(--background);
 }
 
-/* nav {
-  position: fixed;
+nav {
   width: 100%;
-  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  background-color: var(--accent);
+  padding: 1rem 2rem;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+.theme .change-theme {
   background-color: var(--primary);
-  z-index: 99;
-} */
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-family: "regular";
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.theme .change-theme:active {
+  scale: 0.97;
+}
 
 section.allElems {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   padding: 1rem;
   background-color: var(--background);
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: flex-start;
-  /* justify-content: center; */
-  gap: 1rem;
   position: absolute;
+}
+.allElems .header {
+  height: 200px;
+  width: 100%;
+  background-image: url(https://images.unsplash.com/photo-1746982088722-27b42cc26ad4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTF8fHN1bm55JTIwc2t5fGVufDB8MHwwfHx8MA%3D%3D);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.header .header1 h2 {
+  font-family: "light";
+  font-size: 1.5rem;
+  color: var(--background);
+}
+
+.header .header1 h1 {
+  font-family: "regular";
+  font-size: 2.5rem;
+  color: var(--background);
+}
+
+.header .header1 h4 {
+  font-family: "light";
+  font-size: 1.5rem;
+  color: var(--background);
+}
+
+.header .header2 h2 {
+  font-family: "regular";
+  font-size: 1.7rem;
+  color: var(--background);
+}
+
+.header .header2 h4 {
+  font-family: "regular";
+  font-size: 1.2rem;
+  color: var(--background);
+  margin-bottom: 0.7rem;
+}
+
+.header .header2 h3 {
+  font-family: "regular";
+  font-size: 1rem;
+  color: var(--background);
+}
+
+.allFeatures {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 2.4rem;
 }
 
 .elems {
@@ -71,8 +168,11 @@ section.allElems {
   width: 230px;
   overflow: hidden;
   position: relative;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 5px 20px var(--black);
+  box-shadow: 0 5px 20px var(--black);
 }
 
 .elems:active {
@@ -82,6 +182,7 @@ section.allElems {
 .elems img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
   pointer-events: none;
 }
@@ -123,13 +224,14 @@ section.allElems {
 
 ion-icon {
   font-size: 1.1rem;
-  color: white;
+  color: var(--white);
   cursor: pointer;
 }
 
 /* adding todo list styles --------------------------------------------- */
 
 .todo-list-fullpage {
+  position: fixed;
   padding-bottom: 4rem;
 }
 
@@ -144,8 +246,14 @@ ion-icon {
   height: 100%;
   width: 100%;
   margin-top: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 
@@ -157,9 +265,16 @@ ion-icon {
 }
 
 .todo-list-fullpage .todo-container .addTask form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 0.5rem;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   padding: 1rem;
 }
@@ -179,8 +294,14 @@ textarea {
 .mark-imp {
   width: 100%;
   padding: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
 }
 
@@ -197,9 +318,11 @@ textarea {
   border: none;
   border-radius: 5px;
   background-color: var(--primary);
-  color: white;
+  color: var(--white);
   font-family: "regular";
   cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -221,8 +344,14 @@ textarea {
 
 .todo-list-fullpage .todo-container .allTasks .task {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   background-color: var(--background);
   padding: 0.7rem 1.7rem;
@@ -245,18 +374,25 @@ textarea {
 }
 
 .taskDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 0.5rem;
 }
 
 .task button {
-  background-color: rgba(0, 128, 0, 0.788);
-  color: white;
+  background-color: var(--green);
+  color: var(--white);
   border: none;
   border-radius: 5px;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -267,6 +403,7 @@ textarea {
 /* adding daily planner styles -------------------------------------------*/
 
 .daily-planner-fullpage {
+  position: fixed;
   padding-bottom: 4rem;
 }
 
@@ -282,16 +419,27 @@ textarea {
   width: 100%;
   margin-top: 0.5rem;
   padding: 1rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   overflow: auto;
   border-radius: 5px;
 }
 
 .daily-planner-fullpage .day-planner .day-planner-time {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 0.5rem;
   position: relative;
@@ -319,16 +467,25 @@ textarea {
 
 /*adding motivation styles -------------------------------------------*/
 .motivation-fullpage {
-  position: relative;
+  position: fixed;
+}
+.motivation-fullpage h1 {
+  font-family: "bold";
+  font-size: 2rem;
+  color: var(--text);
 }
 
-.motivation-fullpage-container{
+.motivation-fullpage-container {
   width: 100%;
   padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   position: relative;
-  top: 12.5%;
+  top: 12%;
 }
 
 .motivation-fullpage-container .motivation-container {
@@ -349,7 +506,8 @@ textarea {
   border-radius: 40px;
   background-color: var(--primary);
   scale: 1.15;
-  z-index: -1; 
+  z-index: -1;
+  -webkit-filter: blur(100px);
   filter: blur(100px);
 }
 
@@ -363,6 +521,7 @@ textarea {
 }
 
 .motivation-fullpage .motivation-container .motivation-wrapper img {
+  -o-object-fit: cover;
   object-fit: cover;
   position: absolute;
   top: 30%;
@@ -403,4 +562,64 @@ textarea {
   font-size: 1.4rem;
   color: var(--background);
   text-align: right;
+}
+
+/* adding pomodoro styles -------------------------------------------*/
+
+.pomodoro-fullpage {
+  position: fixed;
+}
+
+.pomodoro-fullpage h1 {
+  font-family: "bold";
+  font-size: 2rem;
+  color: var(--text);
+}
+.pomodoro-fullpage .session {
+  position: absolute;
+  top: 27%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  font-size: 1.4rem;
+}
+
+.pomodoro-fullpage .pomo-timer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.pomo-timer h1 {
+  font-size: 8rem;
+  font-family: "light";
+}
+
+.pomo-timer button {
+  width: 100px;
+  padding: 0.5rem 0.9rem;
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-family: "regular";
+  font-size: 1.2rem;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-box-shadow: 3px 3px 0px var(--black);
+  box-shadow: 3px 3px 0px var(--black);
+  margin-right: 0.5rem;
+}
+
+.pomo-timer button:active {
+  scale: 0.97;
+  -webkit-box-shadow: 0px 0px 0px var(--black);
+  box-shadow: 0px 0px 0px var(--black);
 }
