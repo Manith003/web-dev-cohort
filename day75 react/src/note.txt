@@ -1,0 +1,28 @@
+import { useState } from "react";
+
+const App = () => {
+  const [users, setUsers] = useState([
+    {name: 'manith', age: 20},
+    {name: 'jhon', age: 24},
+    {name: 'mahi', age: 27},
+  ]);
+
+  const renderUser = users.map((user,idx)=>{
+    return (
+      <li key={idx}>{user.name}</li>
+    )
+  })
+
+  return (
+    <>
+    <h2>Users Data</h2>
+    <ol>{renderUser}</ol>
+    </>
+  )
+};
+
+export default App;
+
+
+learn about two way binding and two binding is only for form element
+

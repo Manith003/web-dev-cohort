@@ -84,7 +84,6 @@ function todoList() {
 todoList();
 
 /* adding daily planner functionality */
-
 function dailyPlanner() {
   let dailyPlanner = document.querySelector(".day-planner");
   let dayPlanData = JSON.parse(localStorage.getItem("dayPlanData")) || {};
@@ -120,7 +119,6 @@ function dailyPlanner() {
 dailyPlanner();
 
 /* adding motiavation functionality */
-
 function motivationquote() {
   let motivationQuote = document.querySelector(".motivation-2 h1");
   let motivationAuthor = document.querySelector(".motivation-3 h2");
@@ -172,7 +170,7 @@ function pomodoro() {
           upDateTimer();
           btn1.disabled = false;
         }
-      }, 1000);
+      }, 1);
     } else {
       interval = setInterval(() => {
         if (totalSecond > 0) {
@@ -186,7 +184,7 @@ function pomodoro() {
           upDateTimer();
           btn1.disabled = false;
         }
-      }, 1000);
+      }, 1);
     }
     btn1.disabled = true;
   });
