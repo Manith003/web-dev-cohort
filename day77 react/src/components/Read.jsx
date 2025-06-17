@@ -1,7 +1,20 @@
+import React, { useEffect } from 'react';
+
 const Read = (props) => {
   let todos = props.todos;
   let settodos = props.settodos;
 
+
+ useEffect(() => {
+    const storedTodos = localStorage.getItem('todos');
+    if (storedTodos) {
+      settodos(JSON.parse(storedTodos));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
   const deleteHandler = (id) => {
     let filtertodos = todos.filter((todo) => {
@@ -29,7 +42,7 @@ const Read = (props) => {
 
   return (
     <div className="w-[50%] p-10">
-      <h2 className="text-red-700 text-lg">Pending Task: </h2>
+      <h2 className="text-red-700 text-lg animate-pulse">Pending Task: </h2>
       <ol className="mb-1">{renderTodos}</ol>
       <button className="bg-red-700 py-1 px-7 rounded-md text-white cursor-pointer" onClick={allclearHandler}>All clear</button>
     </div>
