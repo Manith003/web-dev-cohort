@@ -4,9 +4,7 @@ import Read from "./components/Read";
 
 const App = () => {
 
-  const [todos, settodos] = useState([
-    // { id: 1, title: "finish the work", isCompleted: false },
-  ]);
+  const [todos, settodos] = useState([]);
 
   return (
     <div className="w-scren h-screen flex p-10 ">

@@ -1,0 +1,572 @@
+@font-face {
+  font-family: "std";
+  src: url("./Cooper\ Medium\ BT.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "nav";
+  src: url("https://db.onlinewebfonts.com/t/55e5fa9898122b170e9d2f98471c416e.eot");
+  src: url("https://db.onlinewebfonts.com/t/55e5fa9898122b170e9d2f98471c416e.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/55e5fa9898122b170e9d2f98471c416e.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/55e5fa9898122b170e9d2f98471c416e.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/55e5fa9898122b170e9d2f98471c416e.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/55e5fa9898122b170e9d2f98471c416e.svg#BasicSansAlt-Bold")
+      format("svg");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  padding: 0.1vw 7vw;
+  overflow-x: hidden;
+  background-color: #ffecee4b;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 0;
+  font-family: nav;
+}
+
+.heading1 img {
+  height: 70px;
+  cursor: pointer;
+}
+
+.heading2 {
+  display: flex;
+  gap: 3rem;
+  font-size: 0.9rem;
+}
+
+.heading2,
+.heading3 h3,
+.right {
+  cursor: pointer;
+}
+
+.heading3 {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.hero-1 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.hero-1 h1 {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 4.5rem;
+  font-family: std;
+  font-weight: 100;
+}
+
+.littleCircle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: absolute;
+  top: 72%;
+  right: 13%;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  border: 1px solid black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.littleCircle h4 {
+  font-size: 1rem;
+  font-family: std;
+  font-weight: 100;
+}
+
+.ri-arrow-right-line {
+  background-color: rgb(3, 3, 3);
+  padding: 0.2rem;
+  border-radius: 50%;
+  color: white;
+  font-size: 0.8rem;
+}
+
+.star {
+  position: absolute;
+  height: 80px;
+  top: 60%;
+  left: 19%;
+}
+
+.hero-2 h3 {
+  font-family: std;
+  text-align: center;
+  font-weight: 100;
+  margin-top: 2rem;
+}
+
+span {
+  font-family: std;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: std;
+}
+
+.elem1 {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.image {
+  height: 50px;
+  display: flex;
+  position: relative;
+}
+
+.image img {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.img1 {
+  position: absolute;
+}
+.img2 {
+  position: absolute;
+  left: 40px;
+}
+.img3 {
+  position: absolute;
+  left: 80px;
+}
+
+.elem2 img {
+  height: 330px;
+}
+
+.elem3 {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.lightimg {
+  background-color: rgb(255, 255, 255);
+  width: fit-content;
+  padding: 0.5rem 0.6rem;
+  border-radius: 50%;
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.drinkOfTheNation {
+  font-size: 1rem;
+  text-align: left;
+  font-weight: 100;
+}
+
+.box1 {
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  background-color: #e8d7cd;
+  border-radius: 50px;
+}
+.box1 h2 {
+  font-size: 0.7rem;
+}
+
+.box2 {
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  background-color: #ffd071;
+  border-radius: 50px;
+}
+.box2 h2 {
+  font-size: 0.7rem;
+}
+
+.box3 {
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  background-color: #feb3cd;
+  border-radius: 50px;
+}
+.box3 h2 {
+  font-size: 0.7rem;
+}
+
+.box4 {
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  background-color: #94cfff;
+  border-radius: 50px;
+}
+.box4 h2 {
+  font-size: 0.7rem;
+}
+
+.fourbox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.twobox1 {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.twobox2 {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* adding responsive to hero-1 and hero-2*/
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 15.5px;
+  }
+
+  .hero-1 h1 {
+    font-size: 3.5rem;
+  }
+
+  .littleCircle h4 {
+    font-size: 0.95rem;
+  }
+
+  .ri-arrow-right-line {
+    font-size: 0.8rem;
+  }
+
+  .hero-2 h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 16px;
+  }
+
+  .hero-1 h1 {
+    font-size: 4rem;
+  }
+
+  .littleCircle h4 {
+    font-size: 1rem;
+  }
+
+  .ri-arrow-right-line {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
+
+  .hero-1 h1 {
+    font-size: 4.5rem;
+  }
+
+  .heading2,
+  .heading3 {
+    font-size: 0.9rem;
+  }
+
+  .drinkOfTheNation {
+    font-size: 1rem;
+  }
+
+  .box1 h2,
+  .box2 h2,
+  .box3 h2,
+  .box4 h2 {
+    font-size: 0.7rem;
+  }
+}
+
+/* Your existing styles for 1400px+ screens remain unchanged */
+
+/* Responsive Typography */
+@media screen and (min-width: 1400px) {
+  .hero-1 h1 {
+    font-size: 6.5rem;
+  }
+  .star {
+    height: 100px;
+    top: 60%;
+    left: 18%;
+  }
+  .littleCircle {
+    top: 72%;
+    right: 11%;
+  }
+
+  .littleCircle h4 {
+    font-size: 1.5rem;
+  }
+
+  .ri-arrow-right-line {
+    font-size: 1.6rem;
+  }
+}
+
+.hero-3 .text {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  font-family: std;
+  font-weight: 100;
+}
+
+.star2 {
+  position: absolute;
+  height: 50px;
+  right: 22%;
+}
+
+.threeImg {
+  display: flex;
+  justify-content: space-between;
+}
+
+.canContainer1,
+.canContainer2,
+.canContainer3 {
+  height: 280px;
+  width: 280px;
+  position: relative;
+  font-family: std;
+  font-size: 0.8rem;
+}
+
+.rateImg {
+  height: 20px;
+}
+
+.rating1,
+.rating2,
+.rating3 {
+  background-color: rgb(247, 247, 247);
+  width: fit-content;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  position: absolute;
+  right: 0;
+  margin: 0.5rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.canImg {
+  height: 280px;
+}
+
+.button1,
+.button2,
+.button3 {
+  width: max-content;
+  padding: 0.5rem 3rem;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 900;
+  text-align: center;
+  font-size: 0.7rem;
+}
+
+
+@media screen and (min-width: 768px) {
+  .hero-3 .text h1 {
+    font-size: 2.3rem;
+  }
+  
+  .star2 {
+    height: 40px;
+  }
+  
+  .threeImg {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  
+  .canContainer1, 
+  .canContainer2, 
+  .canContainer3 {
+    height: 230px;
+    width: 230px;
+  }
+  
+  .canImg {
+    height: 230px;
+  }
+  
+  .button1, 
+  .button2, 
+  .button3 {
+    padding: 0.45rem 2.2rem;
+    font-size: 0.68rem;
+  }
+}
+
+/* Small desktop (992px and above) */
+@media screen and (min-width: 992px) {
+  .hero-3 .text {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .hero-3 .text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .star2 {
+    height: 45px;
+    }
+  
+  .threeImg {
+    justify-content: space-between;
+  }
+  
+  .canContainer1, 
+  .canContainer2, 
+  .canContainer3 {
+    height: 250px;
+    width: 250px;
+  }
+  
+  .canImg {
+    height: 250px;
+  }
+  
+  .rating1, 
+  .rating2, 
+  .rating3 {
+    padding: 0.35rem 0.9rem;
+    font-size: 0.75rem;
+  }
+  
+  .button1, 
+  .button2, 
+  .button3 {
+    padding: 0.45rem 2.5rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* Medium desktop (1200px and above) */
+@media screen and (min-width: 1200px) {
+  .hero-3 .text h1 {
+    font-size: 2.8rem;
+  }
+  
+  .star2 {
+    height: 48px;
+  }
+  
+  .canContainer1, 
+  .canContainer2, 
+  .canContainer3 {
+    height: 270px;
+    width: 270px;
+  }
+  
+  .canImg {
+    height: 270px;
+  }
+  
+  .rating1, 
+  .rating2, 
+  .rating3 {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .button1, 
+  .button2, 
+  .button3 {
+    padding: 0.5rem 2.8rem;
+  }
+}
+
+/* Large desktop (1400px and above) */
+@media screen and (min-width: 1400px) {
+  .hero-3 .text h1 {
+    font-size: 3rem;
+  }
+  
+  .star2 {
+    height: 50px;
+  }
+  
+  .canContainer1, 
+  .canContainer2, 
+  .canContainer3 {
+    height: 280px;
+    width: 280px;
+  }
+  
+  .canImg {
+    height: 280px;
+  }
+  
+  .rating1, 
+  .rating2, 
+  .rating3 {
+    margin: 0.5rem 0.5rem;
+  }
+  
+  .button1, 
+  .button2, 
+  .button3 {
+    padding: 0.5rem 3rem;
+  }
+}
+
+
