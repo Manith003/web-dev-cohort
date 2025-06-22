@@ -27,7 +27,7 @@ main {
   bottom: 0%;
   width: 100%;
   height: 6%;
-  background: rgba(73, 72, 72, 0.534);
+  background: rgba(110, 110, 110, 0.534);
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
@@ -43,13 +43,13 @@ main {
 }
 
 .left img {
-  height: 20px;
+  height: 30px;
 }
 
 .temp,
 .condition {
   color: white;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 200;
 }
 
@@ -61,7 +61,7 @@ main {
 
 .audio,
 .wifi {
-  height: 18px;
+  height: 23px;
   cursor: pointer;
 }
 
@@ -69,7 +69,7 @@ main {
   font-weight: 400;
   color: white;
   letter-spacing: -1px;
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .time {
@@ -81,14 +81,14 @@ main {
 
 .timeText {
   color: rgba(255, 255, 255, 0.945);
-  font-size: 10px;
+  font-size: 14px;
   text-align: center;
   font-weight: 200;
 }
 
 .date {
   color: rgba(255, 255, 255, 0.911);
-  font-size: 10px;
+  font-size: 14px;
   text-align: center;
   font-weight: 200;
 }
@@ -106,7 +106,7 @@ main {
 .copilot,
 .store,
 .notepad {
-  height: 20px;
+  height: 33px;
   cursor: pointer;
 }
 
@@ -119,8 +119,8 @@ main {
 }
 
 input::placeholder {
-  padding: 0 0.3rem;
-  font-size: 10px;
+  padding: 0 0.5rem;
+  font-size: 15px;
 }
 
 #contextMenu {
@@ -176,7 +176,7 @@ input::placeholder {
   border: none;
   background: transparent;
   color: white;
-  font-size: 10px;
+  font-size: 13px;
   outline: none;
 }
 .folder input:focus {
@@ -207,7 +207,7 @@ input::placeholder {
 }
 
 .window-header .title {
-  font-size: 14px;
+  font-size: 18px;
   user-select: none;
 }
 
@@ -216,7 +216,7 @@ input::placeholder {
   background: none;
   border: none;
   color: white;
-  font-size: 14px;
+  font-size: 18px;
   cursor: pointer;
 }
 
@@ -262,11 +262,12 @@ input::placeholder {
   background: none;
   border: none;
   color: white;
-  font-size: 14px;
+  font-size: 18px;
   cursor: pointer;
 }
 
 .notepadContent{
   color: black;
   outline: none;
+  font-size: 1.5rem;
 }
