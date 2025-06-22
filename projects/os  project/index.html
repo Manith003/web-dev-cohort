@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window OS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <div class="bottomNav">
+            <div class="left">
+                <img src="./assets/sun.png" alt="" srcset="">
+                <div class="weather">
+                    <h4 class="temp">25°C</h4>
+                    <h4 class="condition">Sunny</h4>
+                </div>
+            </div>
+            <div class="center">
+                <div class="centerWrapper">
+                    <img src="./assets/windowslogo1.png" alt="" class="windowslogo1">
+                    <div class="search"><input type="text" placeholder="search" class="input"></div>
+                    <img src="./assets/brave-logo-sans-text.svg" alt="" class="braveLogo">
+                    <img src="./assets/folder.png" alt="" class="folderImg">
+                    <img src="./assets/copilot.webp" alt="" srcset="" class="copilot">
+                    <img src="./assets/icons8-microsoft-store-48.png" alt="" srcset="" class="store">
+                    <img src="./assets/icons8-notepad-48.png" alt="" srcset="" class="notepad">
+                </div>
+            </div>
+            <div class="right">
+                <div class="wrapper">
+                    <img src="./assets/icons8-audio-32.png" alt="" class="audio">
+                    <img src="./assets/icons8-wi-fi-32.png" alt="" class="wifi">
+                    <h3 class="eng">ENG</h3>
+                    <div class="time">
+                        <h3 class="timeText">12:00</h3>
+                        <h3 class="date">22-06-2025</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contextMenu" class="hidden">
+            <ul>
+                <li class="contextmenu-item">View</li>
+                <div class="line"></div>
+                <li class="contextmenu-item">Sort by</li>
+                <div class="line"></div>
+                <li class="contextmenu-item reload">Refresh</li>
+                <div class="line"></div>
+                <li class="contextmenu-item newFolder">New Folder</li>
+            </ul>
+        </div>
+        <div id="notepaad" class="hidden">
+            <div class="notepadHeader">
+                <h2>Notepad</h2>
+                <button class="closeBtn">✖</button>
+            </div>
+            <textarea class="notepadContent" rows="18" cols="52"></textarea>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
