@@ -6,6 +6,10 @@ let noteicon = document.querySelector(".notepad");
 let notepad = document.querySelector("#notepaad");
 let notepadCloseBtn = document.querySelector(".closeBtn");
 let notepadHeader = document.querySelector(".notepadHeader");
+let ChangeBackground = document.querySelector('.Change_Background')
+
+let time = document.querySelector(".time");
+const calendarPopup = document.getElementById("calendarPopup");
 
 main.addEventListener("contextmenu", function (e) {
   e.preventDefault();
@@ -145,7 +149,7 @@ function makeFolderDraggable2(el) {
     isDragging = true;
     offsetX = e.clientX - el.offsetLeft;
     offsetY = e.clientY - el.offsetTop;
-    folder.style.zIndex = 1000;
+    el.style.zIndex = 1000;
   });
 
   document.addEventListener("mousemove", function (e) {
@@ -179,7 +183,7 @@ function makeFolderDraggable3(notepadHeader) {
     isDragging = true;
     offsetX = e.clientX - notepad.offsetLeft;
     offsetY = e.clientY - notepad.offsetTop;
-    folder.style.zIndex = 1000;
+    notepad.style.zIndex = 1000;
   });
 
   document.addEventListener("mousemove", function (e) {
@@ -193,3 +197,102 @@ function makeFolderDraggable3(notepadHeader) {
     isDragging = false;
   });
 }
+
+function updateTime() {
+  let date = new Date();
+  let hour = date.getHours().toString().padStart(2, "0");
+  let minute = date.getMinutes().toString().padStart(2, "0");
+  let day = date.getDate().toString().padStart(2, "0");
+  let month = (date.getMonth() + 1).toString().padStart(2, "0");
+  let year = date.getFullYear();
+
+  time.innerHTML = `
+<h3 class="timeText">${hour}:${minute}</h3>
+<h3 class="date">${day}-${month}-${year}</h3>
+`;
+}
+
+updateTime();
+setInterval(updateTime, 1000);
+
+
+const title = document.getElementById("calendarTitle");
+const calendarGrid = document.getElementById("calendarGrid");
+const prevMonthBtn = document.getElementById("prevMonth");
+const nextMonthBtn = document.getElementById("nextMonth");
+
+let selectedDate = new Date();
+
+time.addEventListener("click", () => {
+  calendarPopup.classList.toggle("hidden");
+  renderCalendar(selectedDate);
+});
+
+prevMonthBtn.onclick = () => {
+  selectedDate.setMonth(selectedDate.getMonth() - 1);
+  renderCalendar(selectedDate);
+};
+
+nextMonthBtn.onclick = () => {
+  selectedDate.setMonth(selectedDate.getMonth() + 1);
+  renderCalendar(selectedDate);
+};
+
+function renderCalendar(date) {
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+  const today = new Date();
+  const isTodayMonth = today.getFullYear() === year && today.getMonth() === month;
+
+  title.textContent = date.toLocaleString("default", { month: "long", year: "numeric" });
+
+  calendarGrid.innerHTML = "";
+
+  const dayLabels = ["S", "M", "T", "W", "T", "F", "S"];
+  for (const label of dayLabels) {
+    const cell = document.createElement("div");
+    cell.textContent = label;
+    cell.style.fontWeight = "bold";
+    calendarGrid.appendChild(cell);
+  }
+
+  for (let i = 0; i < firstDay; i++) {
+    calendarGrid.appendChild(document.createElement("div"));
+  }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    const cell = document.createElement("div");
+    cell.textContent = day;
+    cell.classList.add("day");
+
+    if (isTodayMonth && day === today.getDate()) {
+      cell.classList.add("today");
+    }
+
+    calendarGrid.appendChild(cell);
+  }
+}
+
+// Live clock
+function updateClock() {
+  const now = new Date();
+  document.getElementById("clockArea").textContent =
+    now.toLocaleTimeString('en-IN', { hour12: false });
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+
+ChangeBackground.addEventListener('click',function(){
+let backgroundChangeImg = prompt('Paste the Wallpaper link to Change');
+
+if(backgroundChangeImg){
+  main.style.backgroundImage = `url(${backgroundChangeImg})`
+}else{
+  main.style.backgroundImage = `url(./assets/11-0-Big-Sur-Color-Night.avif)`
+}
+
+})

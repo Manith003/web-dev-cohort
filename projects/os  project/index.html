@@ -35,8 +35,19 @@
                     <img src="./assets/icons8-wi-fi-32.png" alt="" class="wifi">
                     <h3 class="eng">ENG</h3>
                     <div class="time">
-                        <h3 class="timeText">12:00</h3>
-                        <h3 class="date">22-06-2025</h3>
+                        <!-- <h3 class="timeText">12:00</h3>
+                        <h3 class="date">22-06-2025</h3> 
+                        dyamic time and date can be added using JavaScript
+                        -->
+                    </div>
+                    <div id="calendarPopup" class="hidden">
+                        <div class="calendar-header">
+                            <button id="prevMonth">←</button>
+                            <span id="calendarTitle">June 2025</span>
+                            <button id="nextMonth">→</button>
+                        </div>
+                        <div class="calendar-body" id="calendarGrid"></div>
+                        <div class="clock-area" id="clockArea">00:00:00</div>
                     </div>
                 </div>
             </div>
@@ -50,6 +61,8 @@
                 <li class="contextmenu-item reload">Refresh</li>
                 <div class="line"></div>
                 <li class="contextmenu-item newFolder">New Folder</li>
+                <div class="line"></div>
+                <li class="contextmenu-item Change_Background">Change Background</li>
             </ul>
         </div>
         <div id="notepaad" class="hidden">
