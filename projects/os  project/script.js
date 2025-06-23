@@ -4,13 +4,37 @@ let newFolder = document.querySelector(".newFolder");
 let reload = document.querySelector(".reload");
 let noteicon = document.querySelector(".notepad");
 let notepad = document.querySelector("#notepaad");
-let notepaad_max_btn = document.querySelector('.notepaad-max-btn') 
+let notepaad_max_btn = document.querySelector(".notepaad-max-btn");
 let notepadCloseBtn = document.querySelector(".closeBtn");
 let notepadHeader = document.querySelector(".notepadHeader");
-let ChangeBackground = document.querySelector('.Change_Background')
+let ChangeBackground = document.querySelector(".Change_Background");
+let contextMenu2 = document.querySelector("#contextMenu2");
+let rename = document.querySelector(".rename");
+let Delete = document.querySelector(".delete");
+let braveLogo = document.querySelector(".braveLogo");
+let title_bar = document.querySelector(".title-bar");
+let googleWindow = document.querySelector("#googleWindow");
+let window_closeBtn = document.querySelector(".window-closeBtn");
+let window_max_btn = document.querySelector(".window-max-btn");
+let folderNew1 = document.querySelector("#folderNew1");
+let folderHeader = document.querySelector(".folderHeader");
+let folderNew1_max_btn = document.querySelector(".folderNew1-max-btn");
+let folderNew1_closeBtn = document.querySelector(".folderNew1-closeBtn");
+let folderImg = document.querySelector(".folderImg");
+let copilot = document.querySelector("#copilot");
+let copilotHeader = document.querySelector(".copilotHeader");
+let copilot_max_btn = document.querySelector(".copilot-max-btn");
+let copilot_closeBtn = document.querySelector(".copilot-closeBtn");
+let copilotImg = document.querySelector(".copilot");
+let microsoftStore = document.querySelector("#microsoftStore");
+let microsoftStoreHeader = document.querySelector(".microsoftStoreHeader");
+let microsoftStore_max_btn = document.querySelector(".microsoftStore-max-btn");
+let microsoftStore_closeBtn = document.querySelector(".microsoftStore-closeBtn");
+let microsoftStoreImg = document.querySelector(".store");
 
 let time = document.querySelector(".time");
 const calendarPopup = document.getElementById("calendarPopup");
+let brightnessSlider = document.querySelector("#brightnessSlider");
 
 main.addEventListener("contextmenu", function (e) {
   e.preventDefault();
@@ -21,6 +45,7 @@ main.addEventListener("contextmenu", function (e) {
 
 document.addEventListener("click", () => {
   contextMenu.classList.add("hidden");
+  contextMenu2.classList.add("hidden");
 });
 
 let folderCount = 1;
@@ -30,6 +55,7 @@ const folderSpacingY = 90;
 const folderSpacingX = 100;
 const maxY = window.innerHeight;
 
+let targetFolder = null;
 function createFolder() {
   let folder = document.createElement("div");
   folder.className = "folder";
@@ -52,9 +78,19 @@ function createFolder() {
   main.appendChild(folder);
   contextMenu.classList.add("hidden");
 
-  //adding rename feature
+  //adding rename and delete feature;
+
+  folder.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    targetFolder = folder;
+    contextMenu2.style.left = `${e.pageX}px`;
+    contextMenu2.style.top = `${e.pageY}px`;
+    contextMenu2.classList.remove("hidden");
+  });
+
   let input = folder.querySelector("input");
-  input.addEventListener("click", function () {
+  rename.addEventListener("click", function () {
     let updatedName = "";
     input.value = "";
     input.removeAttribute("readonly");
@@ -63,6 +99,13 @@ function createFolder() {
       updatedName += e.data;
       folderName = updatedName;
     });
+  });
+
+  Delete.addEventListener("click", function () {
+    if (targetFolder) {
+      targetFolder.remove();
+      targetFolder = null;
+    }
   });
 
   makeFolderDraggable(folder);
@@ -174,9 +217,9 @@ notepadCloseBtn.addEventListener("click", function () {
   notepad.classList.add("hidden");
 });
 
-notepaad_max_btn.addEventListener('click',function(){
-  notepad.classList.toggle('maximized');
-})
+notepaad_max_btn.addEventListener("click", function () {
+  notepad.classList.toggle("maximized");
+});
 
 function makeFolderDraggable3(notepadHeader) {
   let isDragging = false;
@@ -220,7 +263,6 @@ function updateTime() {
 updateTime();
 setInterval(updateTime, 1000);
 
-
 const title = document.getElementById("calendarTitle");
 const calendarGrid = document.getElementById("calendarGrid");
 const prevMonthBtn = document.getElementById("prevMonth");
@@ -250,9 +292,13 @@ function renderCalendar(date) {
   const daysInMonth = new Date(year, month + 1, 0).getDate();
 
   const today = new Date();
-  const isTodayMonth = today.getFullYear() === year && today.getMonth() === month;
+  const isTodayMonth =
+    today.getFullYear() === year && today.getMonth() === month;
 
-  title.textContent = date.toLocaleString("default", { month: "long", year: "numeric" });
+  title.textContent = date.toLocaleString("default", {
+    month: "long",
+    year: "numeric",
+  });
 
   calendarGrid.innerHTML = "";
 
@@ -284,20 +330,206 @@ function renderCalendar(date) {
 // Live clock
 function updateClock() {
   const now = new Date();
-  document.getElementById("clockArea").textContent =
-    now.toLocaleTimeString('en-IN', { hour12: false });
+  document.getElementById("clockArea").textContent = now.toLocaleTimeString(
+    "en-IN",
+    { hour12: false }
+  );
 }
 setInterval(updateClock, 1000);
 updateClock();
 
+ChangeBackground.addEventListener("click", function () {
+  let backgroundChangeImg = prompt("Paste the Wallpaper link to Change");
 
-ChangeBackground.addEventListener('click',function(){
-let backgroundChangeImg = prompt('Paste the Wallpaper link to Change');
+  if (backgroundChangeImg) {
+    main.style.backgroundImage = `url(${backgroundChangeImg})`;
+  } else {
+    main.style.backgroundImage = `url(./assets/11-0-Big-Sur-Color-Night.avif)`;
+  }
+});
 
-if(backgroundChangeImg){
-  main.style.backgroundImage = `url(${backgroundChangeImg})`
-}else{
-  main.style.backgroundImage = `url(./assets/11-0-Big-Sur-Color-Night.avif)`
+brightnessSlider.addEventListener("input", function (e) {
+  main.style.filter = `brightness(${e.target.value}%)`;
+});
+
+const API_KEY = "AIzaSyB78my01_mzGF15wYQiPmF0Mb0HEJsJq5I";
+const SEARCH_ENGINE_ID = "333629dafb95148c8";
+
+async function searchGoogle() {
+  const query = document.getElementById("searchBox").value;
+  const url = `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${SEARCH_ENGINE_ID}&q=${encodeURIComponent(
+    query
+  )}`;
+
+  const res = await fetch(url);
+  const data = await res.json();
+
+  const resultsDiv = document.getElementById("results");
+  resultsDiv.innerHTML = "";
+
+  if (data.items) {
+    data.items.forEach((item) => {
+      resultsDiv.innerHTML += `
+          <div>
+            <a href="${item.link}" target="">${item.title}</a>
+            <p>${item.snippet}</p>
+          </div>
+        `;
+    });
+  } else {
+    resultsDiv.innerHTML = "No results found.";
+  }
 }
 
-})
+braveLogo.addEventListener("click", function () {
+  googleWindow.classList.remove("hidden");
+  makeFolderDraggable4(title_bar);
+});
+
+window_closeBtn.addEventListener("click", function () {
+  googleWindow.classList.add("hidden");
+});
+
+window_max_btn.addEventListener("click", function () {
+  googleWindow.classList.toggle("maximized");
+});
+
+function makeFolderDraggable4(title_bar) {
+  let isDragging = false;
+  let offsetX = 0,
+    offsetY = 0;
+
+  title_bar.addEventListener("mousedown", function (e) {
+    e.preventDefault();
+    isDragging = true;
+    offsetX = e.clientX - googleWindow.offsetLeft;
+    offsetY = e.clientY - googleWindow.offsetTop;
+    googleWindow.style.zIndex = 1000;
+  });
+
+  document.addEventListener("mousemove", function (e) {
+    if (isDragging) {
+      googleWindow.style.left = `${e.clientX - offsetX}px`;
+      googleWindow.style.top = `${e.clientY - offsetY}px`;
+    }
+  });
+
+  document.addEventListener("mouseup", function () {
+    isDragging = false;
+  });
+}
+
+folderImg.addEventListener("click", function () {
+  folderNew1.classList.remove("hidden");
+  makeFolderDraggable5(folderHeader);
+});
+
+folderNew1_closeBtn.addEventListener("click", function () {
+  folderNew1.classList.add("hidden");
+});
+
+folderNew1_max_btn.addEventListener("click", function () {
+  folderNew1.classList.toggle("maximized");
+});
+
+function makeFolderDraggable5(folderHeader) {
+  let isDragging = false;
+  let offsetX = 0,
+    offsetY = 0;
+
+  folderHeader.addEventListener("mousedown", function (e) {
+    e.preventDefault();
+    isDragging = true;
+    offsetX = e.clientX - folderNew1.offsetLeft;
+    offsetY = e.clientY - folderNew1.offsetTop;
+    folderNew1.style.zIndex = 1000;
+  });
+
+  document.addEventListener("mousemove", function (e) {
+    if (isDragging) {
+      folderNew1.style.left = `${e.clientX - offsetX}px`;
+      folderNew1.style.top = `${e.clientY - offsetY}px`;
+    }
+  });
+
+  document.addEventListener("mouseup", function () {
+    isDragging = false;
+  });
+}
+
+copilotImg.addEventListener("click", function () {
+  copilot.classList.remove("hidden");
+  makeFolderDraggable6(copilotHeader);
+});
+
+copilot_closeBtn.addEventListener("click", function () {
+  copilot.classList.add("hidden");
+});
+
+copilot_max_btn.addEventListener("click", function () {
+  copilot.classList.toggle("maximized");
+});
+
+function makeFolderDraggable6(copilotHeader) {
+  let isDragging = false;
+  let offsetX = 0,
+    offsetY = 0;
+
+  copilotHeader.addEventListener("mousedown", function (e) {
+    e.preventDefault();
+    isDragging = true;
+    offsetX = e.clientX - copilot.offsetLeft;
+    offsetY = e.clientY - copilot.offsetTop;
+    copilot.style.zIndex = 1000;
+  });
+
+  document.addEventListener("mousemove", function (e) {
+    if (isDragging) {
+      copilot.style.left = `${e.clientX - offsetX}px`;
+      copilot.style.top = `${e.clientY - offsetY}px`;
+    }
+  });
+
+  document.addEventListener("mouseup", function () {
+    isDragging = false;
+  });
+}
+
+microsoftStoreImg.addEventListener("click", function () {
+  microsoftStore.classList.remove("hidden");
+  makeFolderDraggable7(microsoftStoreHeader);
+});
+
+microsoftStore_closeBtn.addEventListener("click", function () {
+  microsoftStore.classList.add("hidden");
+});
+
+microsoftStore_max_btn.addEventListener("click", function () {
+  microsoftStore.classList.toggle("maximized");
+});
+
+function makeFolderDraggable7(microsoftStoreHeader) {
+  let isDragging = false;
+  let offsetX = 0,
+    offsetY = 0;
+
+  microsoftStoreHeader.addEventListener("mousedown", function (e) {
+    e.preventDefault();
+    isDragging = true;
+    offsetX = e.clientX - microsoftStore.offsetLeft;
+    offsetY = e.clientY - microsoftStore.offsetTop;
+    microsoftStore.style.zIndex = 1000;
+  });
+
+  document.addEventListener("mousemove", function (e) {
+    if (isDragging) {
+      microsoftStore.style.left = `${e.clientX - offsetX}px`;
+      microsoftStore.style.top = `${e.clientY - offsetY}px`;
+    }
+  });
+
+  document.addEventListener("mouseup", function () {
+    isDragging = false;
+  });
+}
+

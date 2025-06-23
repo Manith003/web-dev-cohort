@@ -136,6 +136,24 @@ main {
   font-size: 22px;
   font-weight: 500;
 }
+
+.brightness {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.brightness input[type="range"] {
+  width: 100%;
+  height: 10px;
+  accent-color: rgb(247, 247, 247);
+  background: hsla(0, 0%, 100%, 0.2);
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
 .hidden {
   display: none;
 }
@@ -184,8 +202,7 @@ main {
 .folderImg:hover,
 .copilot:hover,
 .store:hover,
-.notepad:hover
-{
+.notepad:hover {
   transform: scale(1.1);
   transition: all 0.2s ease;
 }
@@ -280,7 +297,7 @@ input::placeholder {
 }
 
 .window-header {
-  height: 30px;
+  height: 35px;
   background: #1e1e2f;
   display: flex;
   justify-content: space-between;
@@ -331,7 +348,7 @@ input::placeholder {
 
 .notepadHeader {
   position: relative;
-  height: 30px;
+  height: 35px;
   width: 100%;
   background: #1e1e2f;
   display: flex;
@@ -340,7 +357,9 @@ input::placeholder {
   padding: 0 10px;
 }
 
-.closeBtn, .notepaad-min-btn, .notepaad-max-btn {
+.closeBtn,
+.notepaad-min-btn,
+.notepaad-max-btn {
   margin-left: 5px;
   background: none;
   border: none;
@@ -366,4 +385,333 @@ input::placeholder {
   border-radius: 0;
 }
 
+#contextMenu2 {
+  width: 15%;
+  border-radius: 5px;
+  position: absolute;
+  background: #111111c4;
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 10px;
+  list-style: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+#contextMenu2 li {
+  font-size: 13px;
+  padding: 10px 20px;
+  text-align: left;
+  cursor: pointer;
+  list-style: none;
+}
+#contextMenu2 li:hover {
+  background-color: #5555557a;
+}
 
+.google-window {
+  width: 700px;
+  height: 500px;
+  background: #2a2a3b;
+  border: 1px solid #888;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+}
+
+.title-bar {
+  background: #1e1e2f;
+  padding: 7px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-brave {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.window-min-btn,
+.window-max-btn,
+.window-closeBtn {
+  background: transparent;
+  user-select: none;
+  border: none;
+  font-size: large;
+  cursor: pointer;
+  color: white;
+}
+
+.window-brave {
+  height: 30px;
+  margin-left: 10px;
+}
+
+.content {
+  padding: 15px;
+}
+
+.content input {
+  width: 70%;
+  padding: 8px;
+  font-size: 16px;
+  color: black;
+  outline: none;
+}
+
+.content input::placeholder {
+  color: #888;
+}
+
+button {
+  padding: 8px 12px;
+  font-size: 16px;
+  margin-left: 8px;
+  color: black;
+  background-color: #f5f5f5d3;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:active {
+  scale: 0.95;
+}
+#results {
+  margin-top: 20px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow-y: auto;
+}
+#results div {
+  margin-top: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+#results a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #0078d7;
+}
+
+.google-window.maximized {
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+}
+
+#folderNew1 {
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  background: #2a2a3b;
+  border: 1px solid #444;
+  color: white;
+  border-radius: 5px;
+  z-index: 999;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  top: 10%;
+  left: 30%;
+}
+
+.folderHeader {
+  position: relative;
+  height: 35px;
+  width: 100%;
+  background: #1e1e2f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.folderNew1-closeBtn,
+.folderNew1-min-btn,
+.folderNew1-max-btn {
+  margin-left: 5px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.folderNew1Content {
+  height: 100%;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  overflow-y: auto;
+  background-color: #2a2a3b;
+  padding: 10px;
+}
+
+.folderTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.folderImg {
+  height: 30px;
+}
+
+.folderH2 {
+  font-weight: 200;
+}
+
+#folderNew1.maximized {
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+}
+
+#copilot {
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  background: #2a2a3b;
+  border: 1px solid #444;
+  color: white;
+  border-radius: 5px;
+  z-index: 999;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  top: 10%;
+  left: 30%;
+}
+
+.copilotHeader {
+  position: relative;
+  height: 35px;
+  width: 100%;
+  background: #1e1e2f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.copilot-closeBtn,
+.copilot-min-btn,
+.copilot-max-btn {
+  margin-left: 5px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.copilotContent {
+  height: 100%;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  overflow-y: auto;
+  background-color: #2a2a3b;
+  padding: 10px;
+}
+
+.copilotTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.copilot-img {
+  height: 30px;
+}
+
+.copilotH2 {
+  font-weight: 200;
+}
+
+#copilot.maximized {
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+}
+
+
+
+#microsoftStore {
+  position: absolute;
+  width: 600px;
+  height: 400px;
+  background: #2a2a3b;
+  border: 1px solid #444;
+  color: white;
+  border-radius: 5px;
+  z-index: 999;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  top: 10%;
+  left: 30%;
+}
+
+.microsoftStoreHeader {
+  position: relative;
+  height: 35px;
+  width: 100%;
+  background: #1e1e2f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.microsoftStore-closeBtn,
+.microsoftStore-min-btn,
+.microsoftStore-max-btn {
+  margin-left: 5px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.microsoftStoreContent {
+  height: 100%;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  overflow-y: auto;
+  background-color: #2a2a3b;
+  padding: 10px;
+}
+
+.microsoftStoreTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.microsoftStore-img {
+  height: 30px;
+}
+
+.microsoftStoreH2 {
+  font-weight: 200;
+}
+
+#microsoftStore.maximized {
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+}

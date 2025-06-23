@@ -23,7 +23,7 @@
                     <img src="./assets/windowslogo1.png" alt="" class="windowslogo1">
                     <div class="search"><input type="text" placeholder="search" class="input"></div>
                     <img src="./assets/brave-logo-sans-text.svg" alt="" class="braveLogo">
-                    <img src="./assets/folder.png" alt="" class="folderImg" data-tooltip="Brave Browser">
+                    <img src="./assets/folder.png" alt="" class="folderImg">
                     <img src="./assets/copilot.webp" alt="" srcset="" class="copilot">
                     <img src="./assets/icons8-microsoft-store-48.png" alt="" srcset="" class="store">
                     <img src="./assets/icons8-notepad-48.png" alt="" srcset="" class="notepad">
@@ -48,6 +48,10 @@
                         </div>
                         <div class="calendar-body" id="calendarGrid"></div>
                         <div class="clock-area" id="clockArea">00:00:00</div>
+                        <div class="brightness">
+                            <img src="./assets/brightness.png" alt="">
+                            <input type="range" value="100" class="brightness-slider" id="brightnessSlider">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -65,6 +69,13 @@
                 <li class="contextmenu-item Change_Background">Change Background</li>
             </ul>
         </div>
+        <div id="contextMenu2" class="hidden">
+            <ul>
+                <li class="contextmenu2-item rename">Rename</li>
+                <div class="line"></div>
+                <li class="contextmenu2-item delete">Delete</li>
+            </ul>
+        </div>
         <div id="notepaad" class="hidden">
             <div class="notepadHeader">
                 <h2>Notepad</h2>
@@ -75,6 +86,66 @@
                 </div>
             </div>
             <textarea class="notepadContent"></textarea>
+        </div>
+        <div id="googleWindow" class="google-window hidden">
+            <div class="title-bar">
+                <div class="title-brave">
+                    <img class="window-brave" src="./assets/brave-logo-sans-text.svg" alt="">
+                    <span>Brave Browser</span>
+                </div>
+                <div class="google-controls">
+                    <button class="window-min-btn">_</button>
+                    <button class="window-max-btn">□</button>
+                    <button class="window-closeBtn">✖</button>
+                </div>
+            </div>
+            <div class="content">
+                <input id="searchBox" placeholder="Search something...">
+                <button onclick="searchGoogle()">Search</button>
+                <div id="results"></div>
+            </div>
+        </div>
+        <div id="folderNew1" class="hidden">
+            <div class="folderHeader">
+                <div class="folderTitle">
+                    <img class="folderImg" src="./assets/folder.png" alt="">
+                    <h2 class="folderH2">New Folder</h2>
+                </div>
+                <div class="folderNew1-controls">
+                    <button class="folderNew1-min-btn">_</button>
+                    <button class="folderNew1-max-btn">□</button>
+                    <button class="folderNew1-closeBtn">✖</button>
+                </div>
+            </div>
+            <div class="folderNew1Content">This is a folder</div>
+        </div>
+        <div id="copilot" class="hidden">
+            <div class="copilotHeader">
+                <div class="copilotTitle">
+                    <img class="copilot-img" src="./assets/copilot.webp" alt="">
+                    <h2 class="copilotH2">Copilot</h2>
+                </div>
+                <div class="copilot-controls">
+                    <button class="copilot-min-btn">_</button>
+                    <button class="copilot-max-btn">□</button>
+                    <button class="copilot-closeBtn">✖</button>
+                </div>
+            </div>
+            <div class="copilotContent">This is copilot</div>
+        </div>
+        <div id="microsoftStore" class="hidden">
+            <div class="microsoftStoreHeader">
+                <div class="microsoftStoreTitle">
+                    <img class="microsoftStore-img" src="./assets/icons8-microsoft-store-48.png" alt="">
+                    <h2 class="microsoftStoreH2">Microsoft Store</h2>
+                </div>
+                <div class="microsoftStore-controls">
+                    <button class="microsoftStore-min-btn">_</button>
+                    <button class="microsoftStore-max-btn">□</button>
+                    <button class="microsoftStore-closeBtn">✖</button>
+                </div>
+            </div>
+            <div class="microsoftStoreContent">This is Microsoft Store</div>
         </div>
     </main>
 
