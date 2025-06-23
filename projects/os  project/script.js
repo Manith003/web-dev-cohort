@@ -4,6 +4,7 @@ let newFolder = document.querySelector(".newFolder");
 let reload = document.querySelector(".reload");
 let noteicon = document.querySelector(".notepad");
 let notepad = document.querySelector("#notepaad");
+let notepaad_max_btn = document.querySelector('.notepaad-max-btn') 
 let notepadCloseBtn = document.querySelector(".closeBtn");
 let notepadHeader = document.querySelector(".notepadHeader");
 let ChangeBackground = document.querySelector('.Change_Background')
@@ -172,6 +173,10 @@ noteicon.addEventListener("click", function () {
 notepadCloseBtn.addEventListener("click", function () {
   notepad.classList.add("hidden");
 });
+
+notepaad_max_btn.addEventListener('click',function(){
+  notepad.classList.toggle('maximized');
+})
 
 function makeFolderDraggable3(notepadHeader) {
   let isDragging = false;

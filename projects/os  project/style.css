@@ -180,6 +180,16 @@ main {
   cursor: pointer;
 }
 
+.braveLogo:hover,
+.folderImg:hover,
+.copilot:hover,
+.store:hover,
+.notepad:hover
+{
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+
 .input {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -306,8 +316,8 @@ input::placeholder {
 
 #notepaad {
   position: absolute;
-  width: 600px !important;
-  height: 400px !important;
+  width: 600px;
+  height: 400px;
   background: #2a2a3b;
   border: 1px solid #444;
   color: white;
@@ -320,7 +330,9 @@ input::placeholder {
 }
 
 .notepadHeader {
+  position: relative;
   height: 30px;
+  width: 100%;
   background: #1e1e2f;
   display: flex;
   justify-content: space-between;
@@ -328,7 +340,7 @@ input::placeholder {
   padding: 0 10px;
 }
 
-.closeBtn {
+.closeBtn, .notepaad-min-btn, .notepaad-max-btn {
   margin-left: 5px;
   background: none;
   border: none;
@@ -338,7 +350,20 @@ input::placeholder {
 }
 
 .notepadContent {
+  height: 100%;
+  width: 100%;
   color: black;
   outline: none;
   font-size: 1.5rem;
+  overflow-y: auto;
 }
+
+#notepaad.maximized {
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+}
+
+

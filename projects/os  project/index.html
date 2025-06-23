@@ -23,7 +23,7 @@
                     <img src="./assets/windowslogo1.png" alt="" class="windowslogo1">
                     <div class="search"><input type="text" placeholder="search" class="input"></div>
                     <img src="./assets/brave-logo-sans-text.svg" alt="" class="braveLogo">
-                    <img src="./assets/folder.png" alt="" class="folderImg">
+                    <img src="./assets/folder.png" alt="" class="folderImg" data-tooltip="Brave Browser">
                     <img src="./assets/copilot.webp" alt="" srcset="" class="copilot">
                     <img src="./assets/icons8-microsoft-store-48.png" alt="" srcset="" class="store">
                     <img src="./assets/icons8-notepad-48.png" alt="" srcset="" class="notepad">
@@ -68,9 +68,13 @@
         <div id="notepaad" class="hidden">
             <div class="notepadHeader">
                 <h2>Notepad</h2>
-                <button class="closeBtn">✖</button>
+                <div class="notepaad-controls">
+                    <button class="notepaad-min-btn">_</button>
+                    <button class="notepaad-max-btn">□</button>
+                    <button class="closeBtn">✖</button>
+                </div>
             </div>
-            <textarea class="notepadContent" rows="18" cols="52"></textarea>
+            <textarea class="notepadContent"></textarea>
         </div>
     </main>
 
