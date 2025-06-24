@@ -90,6 +90,18 @@ function createFolder() {
     contextMenu2.style.top = `${e.pageY}px`;
     contextMenu2.classList.remove("hidden");
   });
+  
+  let input = folder.querySelector("input");
+  rename.addEventListener("click", function () {
+    let updatedName = "";
+    input.value = "";
+    input.removeAttribute("readonly");
+    input.focus();
+    input.addEventListener("input", function (e) {
+      updatedName += e.data;
+      folderName = updatedName;
+    });
+  });
 
   Delete.addEventListener("click", function () {
     if (targetFolder) {
@@ -104,39 +116,6 @@ function createFolder() {
   });
 }
 newFolder.addEventListener("click", createFolder);
-
-rename.addEventListener("click", function () {
-  if (targetFolder) {
-    let input = targetFolder.querySelector("input");
-    const originalValue = input.value;
-
-    input.removeAttribute("readonly");
-    input.focus();
-    input.select();
-    
-    // Remove previous event handlers by cloning
-    const newInput = input.cloneNode(false); 
-    input.parentNode.replaceChild(newInput, input);
-    
-    newInput.addEventListener("change", function() {
-      folderName = newInput.value;
-    });
-    
-    newInput.addEventListener("blur", function() {
-      newInput.setAttribute("readonly", true);
-    });
-    
-    newInput.addEventListener("keyup", function(e) {
-      if (e.key === "Enter") {
-        newInput.blur();
-      }
-    });
-
-    newInput.focus();
-    newInput.select();
-  }
-  contextMenu2.classList.add("hidden");
-});
 
 function reloadFun() {
   window.location.reload();
