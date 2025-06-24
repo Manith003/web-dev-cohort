@@ -645,8 +645,6 @@ button:active {
   border-radius: 0;
 }
 
-
-
 #microsoftStore {
   position: absolute;
   width: 600px;
@@ -714,4 +712,158 @@ button:active {
   width: 100vw;
   height: 100vh;
   border-radius: 0;
+}
+
+#windows-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.568);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 2rem 2rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.windows-button-search {
+  width: 100%;
+  height: 30px;
+  outline: none;
+  color: black;
+  font-size: 1rem;
+  border: none;
+  border-radius: 3px;
+  padding: 0 1rem;
+}
+
+.windows-button-title {
+  width: 100%;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: black;
+  padding: 1rem 0;
+  margin-top: 1rem;
+}
+
+.windows-button-content {
+  display: flex;
+  gap: 3rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.thisPC {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.thisPC:hover {
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+
+.thisPcImg {
+  width: 35px;
+  height: 35px;
+}
+.thisPcH2 {
+  font-weight: 200;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.recycle,
+.folderNew2,
+.brave2,
+.copilot2,
+.store2,
+.notepad2,
+.vscode,
+.spotify,
+.youtube,
+.python {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.recycle:hover ,
+.folderNew2:hover,
+.brave2:hover,
+.copilot2:hover,
+.store2:hover,
+.notepad2:hover,
+.vscode:hover,
+.spotify:hover,
+.youtube:hover,
+.python:hover {
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+}
+
+.recycleImg,
+.folderNew2Img,
+.brave2Img,
+.copilot2Img,
+.store2Img,
+.notepad2Img,
+.vscodeImg,
+.spotifyImg,
+.youtubeImg,
+.pythonImg {
+  width: 35px;
+  height: 35px;
+}
+.recycleH2,
+.folderNew2H2,
+.brave2H2,
+.copilot2H2,
+.store2H2,
+.notepad2H2,
+.vscodeH2,
+.spotifyH2,
+.youtubeH2,
+.pythonH2 {
+  font-weight: 200;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.container5{
+  position: relative;
+}
+
+.windows-button-footer{
+  position: absolute;
+  top: 170%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.footerImg{
+  height: 35px;
+}
+
+.footerH2{
+  font-weight: 200;
+  color: black;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
 }

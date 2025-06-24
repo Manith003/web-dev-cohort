@@ -31,6 +31,8 @@ let microsoftStoreHeader = document.querySelector(".microsoftStoreHeader");
 let microsoftStore_max_btn = document.querySelector(".microsoftStore-max-btn");
 let microsoftStore_closeBtn = document.querySelector(".microsoftStore-closeBtn");
 let microsoftStoreImg = document.querySelector(".store");
+let windowslogo1 = document.querySelector('.windowslogo1');
+let windows_button = document.querySelector('#windows-button');
 
 let time = document.querySelector(".time");
 const calendarPopup = document.getElementById("calendarPopup");
@@ -56,10 +58,11 @@ const folderSpacingX = 100;
 const maxY = window.innerHeight;
 
 let targetFolder = null;
+let folderName = '';
 function createFolder() {
   let folder = document.createElement("div");
   folder.className = "folder";
-  let folderName = `New Folder ${folderCount++}`;
+  folderName = `New Folder ${folderCount++}`;
 
   folder.innerHTML = `<img src="./assets/folder.png"  />
   <input type='text' value="${folderName}" readonly />
@@ -78,9 +81,8 @@ function createFolder() {
   main.appendChild(folder);
   contextMenu.classList.add("hidden");
 
-  //adding rename and delete feature;
-
-  folder.addEventListener("contextmenu", function (e) {
+    //adding rename and delete feature;
+    folder.addEventListener("contextmenu", function (e) {
     e.preventDefault();
     e.stopPropagation();
     targetFolder = folder;
@@ -89,25 +91,12 @@ function createFolder() {
     contextMenu2.classList.remove("hidden");
   });
 
-  let input = folder.querySelector("input");
-  rename.addEventListener("click", function () {
-    let updatedName = "";
-    input.value = "";
-    input.removeAttribute("readonly");
-    input.focus();
-    input.addEventListener("input", function (e) {
-      updatedName += e.data;
-      folderName = updatedName;
-    });
-  });
-
   Delete.addEventListener("click", function () {
     if (targetFolder) {
       targetFolder.remove();
       targetFolder = null;
     }
   });
-
   makeFolderDraggable(folder);
 
   folder.addEventListener("dblclick", function () {
@@ -115,6 +104,39 @@ function createFolder() {
   });
 }
 newFolder.addEventListener("click", createFolder);
+
+rename.addEventListener("click", function () {
+  if (targetFolder) {
+    let input = targetFolder.querySelector("input");
+    const originalValue = input.value;
+
+    input.removeAttribute("readonly");
+    input.focus();
+    input.select();
+    
+    // Remove previous event handlers by cloning
+    const newInput = input.cloneNode(false); 
+    input.parentNode.replaceChild(newInput, input);
+    
+    newInput.addEventListener("change", function() {
+      folderName = newInput.value;
+    });
+    
+    newInput.addEventListener("blur", function() {
+      newInput.setAttribute("readonly", true);
+    });
+    
+    newInput.addEventListener("keyup", function(e) {
+      if (e.key === "Enter") {
+        newInput.blur();
+      }
+    });
+
+    newInput.focus();
+    newInput.select();
+  }
+  contextMenu2.classList.add("hidden");
+});
 
 function reloadFun() {
   window.location.reload();
@@ -533,3 +555,6 @@ function makeFolderDraggable7(microsoftStoreHeader) {
   });
 }
 
+windowslogo1.addEventListener('click',function(){
+  windows_button.classList.toggle('hidden');
+})
