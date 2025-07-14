@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "MACBOOK AIR",
+      "price": "120,000",
+      "description": "LAPTOP",
+      "category": "PRODUCT",
+      "image": "https://imgs.search.brave.com/Hk7EQbEmGkp60pdXKwcLLaHwzUOsbzA3lr3DwngIKQQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubWFjcnVtb3Jz/LmNvbS9hcnRpY2xl/LW5ldy8yMDI1LzAz/L0FwcGxlLU1hY0Jv/b2stQWlyLWhlcm8u/anBn"
+    }
+  ],
+  "users": [
+    {
+      "id": "Jc0tkAtxjeKrIrnvmfhYn",
+      "username": "manith003",
+      "email": "manithkumar9042@gmail.com",
+      "password": "manith8190@",
+      "isAdmin": false
+    }
+  ],
+  "carts": []
+}
