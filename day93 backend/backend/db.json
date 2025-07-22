@@ -2,19 +2,34 @@
   "products": [
     {
       "id": "1",
-      "title": "MACBOOK AIR",
-      "price": "120,000",
-      "description": "LAPTOP",
-      "category": "PRODUCT",
-      "image": "https://imgs.search.brave.com/Hk7EQbEmGkp60pdXKwcLLaHwzUOsbzA3lr3DwngIKQQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMubWFjcnVtb3Jz/LmNvbS9hcnRpY2xl/LW5ldy8yMDI1LzAz/L0FwcGxlLU1hY0Jv/b2stQWlyLWhlcm8u/anBn"
+      "image": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-skyblue-select-202503?wid=904&hei=840&fmt=jpeg&qlt=90&.v=M2RyY09CWXlTQUp1KzEveHR6VXNxcTQ1bzN1SitYTU83Mm9wbk1xa1lWNC9UNzNvY2N5NXJTTDQ2YkVYYmVXakJkRlpCNVhYU3AwTldRQldlSnpRa0lIV0Fmdk9rUlVsZ3hnNXZ3K3lEVlk",
+      "title": "MacBook Air M4 (13-inch)",
+      "category": "Laptop",
+      "description": "The all-new MacBook Air powered by the Apple M4 chip, featuring blazing performance, ultra-slim design, and up to 18 hours of battery life.",
+      "price": "89900"
+    },
+    {
+      "id": "sOvvJ5n9Ab-vIEiRaj2sk",
+      "image": "https://imgs.search.brave.com/AsxYvV0gaCVSJxpZSMxugBiMSg5zH264Zqhuh_jER6s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZmFjdHluZXdzLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/MS8xMi9Lb21hbC1Q/YW5kZXktd2lraS5q/cGc",
+      "title": "neckles",
+      "price": "249",
+      "description": "this is a neckles",
+      "category": "neckles"
     }
   ],
   "users": [
     {
-      "id": "Jc0tkAtxjeKrIrnvmfhYn",
+      "id": "UiKlIaA08E31kKsF3hnru",
       "username": "manith003",
       "email": "manithkumar9042@gmail.com",
-      "password": "manith8190@",
+      "password": "manith003@",
+      "isAdmin": true
+    },
+    {
+      "id": "Nuf_SPYG8uaTIAlSUak98",
+      "username": "manith2005",
+      "email": "manithkumar9042@gmail.com",
+      "password": "manith1234@",
       "isAdmin": false
     }
   ],

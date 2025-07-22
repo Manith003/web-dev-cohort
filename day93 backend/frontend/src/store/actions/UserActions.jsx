@@ -1,5 +1,5 @@
 import axios from "../../api/Axiosconfig";
-import { loaduser } from "../reducers/UserSlice";
+import { loaduser, removeuser } from "../reducers/UserSlice";
 
 export const asynccurrentuser = () => async (dispatch, getState) => {
   try {
@@ -15,15 +15,16 @@ export const asynccurrentuser = () => async (dispatch, getState) => {
   }
 };
 
-export const asynclogoutuser = (userData) => async (dispatch, getState) => {
+export const asynclogoutuser = () => async (dispatch, getState) => {
   try {
     localStorage.removeItem("userToken");
+    dispatch(removeuser());
   } catch (error) {
     console.log(error);
   }
 };
 
-export const asyncloginuser = (userData) => async (dispatch, getState) => {
+export const asyncloginuser  = (userData) => async (dispatch, getState) => {
   try {
     const { data } = await axios.get(
       `/users?username=${userData.username}&password=${userData.password}`

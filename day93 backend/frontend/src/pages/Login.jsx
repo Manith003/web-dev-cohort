@@ -1,27 +1,33 @@
 import { useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
-import {asyncloginuser} from "../store/actions/UserActions";
+import { asyncloginuser } from "../store/actions/UserActions";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 
 const Login = () => {
   const { register, reset, handleSubmit } = useForm();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const loginHandler = (userData) => {
+    console.log("userData:", userData);
+
     dispatch(asyncloginuser(userData));
 
     toast.success("Login successful!", {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
-      
-        reset();
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
+    navigate("/");
+    setTimeout(()=>{
+      window.location.reload();
+    },100);
   };
 
   return (
@@ -36,7 +42,7 @@ const Login = () => {
         />
 
         <input
-         {...register("password", {
+          {...register("password", {
             required: true,
             pattern: {
               value:
@@ -54,7 +60,10 @@ const Login = () => {
           Login
         </button>
         <p>
-          Don't have an account? <NavLink className="text-blue-700" to="/register">Register</NavLink>
+          Don't have an account?
+          <NavLink className="text-blue-700" to="/register">
+            Register
+          </NavLink>
         </p>
       </form>
     </div>

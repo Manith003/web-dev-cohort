@@ -16,10 +16,9 @@ const Register = () => {
   const dispatch = useDispatch();
 
 
-
   const RegisterHandler = (userData) => {
     userData.id = nanoid();
-    userData.isAdmin = false;
+    userData.isAdmin = true;
     dispatch(asyncregisteruser(userData));
     reset();
 

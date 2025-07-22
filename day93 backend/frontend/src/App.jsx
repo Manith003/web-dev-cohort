@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import Navbar from "./components/Navbar";
 import Mainroutes from "./routes/Mainroutes";
 import { asynccurrentuser } from "./store/actions/UserActions";
+import { asyncloadproducts } from "./store/actions/ProductActions";
 import { useEffect } from "react";
 
 const App = () => {
@@ -9,10 +10,11 @@ const App = () => {
 
   useEffect(() => {
     dispatch(asynccurrentuser());
+    dispatch(asyncloadproducts());
   }, []);
 
   return (
-    <div className="px-[7%] h-screen w-full overflow-hidden">
+    <div className="px-[1%] h-screen w-full bg-[#FAF9F6]">
       <Navbar />
       <Mainroutes />
     </div>
