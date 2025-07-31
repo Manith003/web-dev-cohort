@@ -28,11 +28,11 @@ const CreateProduct = () => {
       draggable: true,
       progress: undefined,
     });
-    navigate("/products");
+    navigate("/");
   };
 
   return (
-    <div className="flex justify-center items-center w-full min-h-screen  text-white ">
+    <div className="flex justify-center items-center w-full min-h-screen  text-white  relative top-[-5%]">
       <form
         onSubmit={handleSubmit(CreateProductHandler)}
         className="flex flex-col w-full max-w-2xl gap-4 bg-zinc-900 p-10 rounded-2xl shadow-lg border border-zinc-800"

@@ -16,7 +16,7 @@ const Login = () => {
 
     toast.success("Login successful!", {
       position: "top-right",
-      autoClose: 3000,
+      autoClose: 1500,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -27,7 +27,7 @@ const Login = () => {
     navigate("/");
     setTimeout(()=>{
       window.location.reload();
-    },100);
+    },1500);
   };
 
   return (

@@ -1,20 +1,20 @@
 {
   "products": [
     {
-      "id": "1",
-      "image": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/mba13-skyblue-select-202503?wid=904&hei=840&fmt=jpeg&qlt=90&.v=M2RyY09CWXlTQUp1KzEveHR6VXNxcTQ1bzN1SitYTU83Mm9wbk1xa1lWNC9UNzNvY2N5NXJTTDQ2YkVYYmVXakJkRlpCNVhYU3AwTldRQldlSnpRa0lIV0Fmdk9rUlVsZ3hnNXZ3K3lEVlk",
-      "title": "MacBook Air M4 (13-inch)",
-      "category": "Laptop",
-      "description": "The all-new MacBook Air powered by the Apple M4 chip, featuring blazing performance, ultra-slim design, and up to 18 hours of battery life.",
-      "price": "89900"
+      "id": "1JznnuN8_rMWjpVWbaWTJ",
+      "image": "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHByb2R1Y3R8ZW58MHx8MHx8fDA%3D",
+      "title": "Classic Premium Leather Oxford Shoe",
+      "price": "2599",
+      "description": "Crafted from genuine leather, this premium Oxford shoe combines elegance with comfort. Ideal for formal events, office wear, or upscale casual outfits. Its cushioned insole and anti-slip sole ensure all-day support and durability.",
+      "category": "shoe"
     },
     {
-      "id": "sOvvJ5n9Ab-vIEiRaj2sk",
-      "image": "https://imgs.search.brave.com/AsxYvV0gaCVSJxpZSMxugBiMSg5zH264Zqhuh_jER6s/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/ZmFjdHluZXdzLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/MS8xMi9Lb21hbC1Q/YW5kZXktd2lraS5q/cGc",
-      "title": "neckles",
-      "price": "249",
-      "description": "this is a neckles",
-      "category": "neckles"
+      "id": "hUQ5BOAEpE6lzwLcYaCbY",
+      "image": "https://images.unsplash.com/photo-1745946645137-66cfb274ee7d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1fHx8ZW58MHx8fHx8",
+      "title": "car",
+      "price": "111000000",
+      "description": "this is  a car",
+      "category": "car"
     }
   ],
   "users": [
@@ -23,15 +23,16 @@
       "username": "manith003",
       "email": "manithkumar9042@gmail.com",
       "password": "manith003@",
-      "isAdmin": true
+      "isAdmin": true,
+      "cart": []
     },
     {
-      "id": "Nuf_SPYG8uaTIAlSUak98",
+      "id": "wMsO_EPMFpLEvOL4SZA5i",
       "username": "manith2005",
       "email": "manithkumar9042@gmail.com",
-      "password": "manith1234@",
-      "isAdmin": false
+      "password": "manith2005@",
+      "isAdmin": false,
+      "cart": []
     }
-  ],
-  "carts": []
+  ]
 }

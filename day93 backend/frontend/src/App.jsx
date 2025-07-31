@@ -14,7 +14,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="px-[1%] h-screen w-full bg-[#FAF9F6]">
+    <div className="px-[1%] h-full w-full bg-[#FAF9F6]">
       <Navbar />
       <Mainroutes />
     </div>

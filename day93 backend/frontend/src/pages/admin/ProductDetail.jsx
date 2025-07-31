@@ -15,9 +15,6 @@ const ProductDetail = () => {
     userReducer: { users },
   } = useSelector((state) => state);
 
-  console.log("Products", Products);
-  console.log("Users", users);
-
   const product = Products.find((item) => item.id === id);
 
   const navigate = useNavigate();
@@ -56,7 +53,7 @@ const ProductDetail = () => {
       draggable: true,
       progress: undefined,
     });
-    navigate("/products");
+    navigate("/");
   };
 
   const renderedProducrDetail = product ? (
@@ -107,14 +104,14 @@ const ProductDetail = () => {
       draggable: true,
       progress: undefined,
     });
-    navigate("/products");
+    navigate("/");
   };
 
   const updateproduct = (
     <div>
       <div className=" flex justify-center items-center w-full min-h-screen text-white filter flex-col ">
         {users && users?.isAdmin && (
-          <form
+           <form
             onSubmit={handleSubmit(UpdateProductHandler)}
             className="flex flex-col w-full max-w-2xl gap-4 bg-zinc-900 p-10 rounded-2xl shadow-lg border border-zinc-800"
           >
