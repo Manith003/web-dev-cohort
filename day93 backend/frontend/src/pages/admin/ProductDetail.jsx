@@ -10,12 +10,11 @@ import {
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const {
-    productReducer: { Products },
-    userReducer: { users },
-  } = useSelector((state) => state);
 
-  const product = Products.find((item) => item.id === id);
+  const users = useSelector((state) => state.userReducer.users);
+  const Products = useSelector((state) => state.productReducer.Products);
+
+  const product = Products.find((item) => item.id == id);
 
   const navigate = useNavigate();
 
@@ -25,7 +24,6 @@ const ProductDetail = () => {
 
   const {
     register,
-    reset,
     handleSubmit,
     formState: { errors },
   } = useForm({
@@ -59,7 +57,6 @@ const ProductDetail = () => {
   const renderedProducrDetail = product ? (
     <div className="flex items-center justify-center mt-5">
       <div className=" w-full bg-[#111111] rounded-2xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-8 border border-gray-800">
-        {/* Image Section */}
         <div className="flex items-center justify-center bg-neutral-900 p-6">
           <img
             src={product.image}
@@ -68,7 +65,6 @@ const ProductDetail = () => {
           />
         </div>
 
-        {/* Info Section */}
         <div className="p-8 flex flex-col justify-between text-white">
           <div>
             <span className="text-sm text-gray-400 uppercase">
@@ -109,59 +105,61 @@ const ProductDetail = () => {
 
   const updateproduct = (
     <div>
-      <div className=" flex justify-center items-center w-full min-h-screen text-white filter flex-col ">
-        {users && users?.isAdmin && (
-           <form
-            onSubmit={handleSubmit(UpdateProductHandler)}
-            className="flex flex-col w-full max-w-2xl gap-4 bg-zinc-900 p-10 rounded-2xl shadow-lg border border-zinc-800"
-          >
-            <h1 className="text-4xl font-semibold mb-6 text-center text-white tracking-wide">
-              Update Product Details
-            </h1>
-
-            <input
-              {...register("image", { required: true })}
-              className="bg-zinc-800 border border-zinc-700 rounded-xl p-3 text-lg placeholder-gray-400 text-white outline-none focus:ring-2 focus:ring-blue-500"
-              type="text"
-              placeholder="Enter product image URL"
-            />
-            <input
-              {...register("title", { required: true })}
-              className="bg-zinc-800 border border-zinc-700 rounded-xl p-3 text-lg placeholder-gray-400 text-white outline-none focus:ring-2 focus:ring-blue-500"
-              type="text"
-              placeholder="Enter product title"
-            />
-            <input
-              {...register("price", { required: true })}
-              className="bg-zinc-800 border border-zinc-700 rounded-xl p-3 text-lg placeholder-gray-400 text-white outline-none focus:ring-2 focus:ring-blue-500"
-              type="number"
-              placeholder="10.99"
-            />
-            <input
-              {...register("description", { required: true })}
-              className="bg-zinc-800 border border-zinc-700 rounded-xl p-3 text-lg placeholder-gray-400 text-white outline-none focus:ring-2 focus:ring-blue-500"
-              type="text"
-              placeholder="Enter product description"
-            />
-            <input
-              {...register("category", { required: true })}
-              className="bg-zinc-800 border border-zinc-700 rounded-xl p-3 text-lg placeholder-gray-400 text-white outline-none focus:ring-2 focus:ring-blue-500"
-              type="text"
-              placeholder="Enter product categories (comma separated)"
-            />
-
-            <button className="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 p-3 rounded-xl text-white text-xl font-medium transition-all duration-200">
-              Update Product
-            </button>
-            <button
-              className="bg-gradient-to-r from-red-600 to-red-400 hover:from-red-700 hover:to-red-500 p-3 rounded-xl text-white text-xl font-medium transition-all duration-200"
-              onClick={deleteHandler}
+      {users && users?.isAdmin && (
+        <div className=" flex justify-center items-center w-full min-h-screen text-white filter flex-col ">
+          {users && users?.isAdmin && (
+            <form
+              onSubmit={handleSubmit(UpdateProductHandler)}
+              className="flex flex-col w-full max-w-2xl gap-4 bg-zinc-900 p-10 rounded-2xl shadow-lg border border-zinc-800"
             >
-              Delete Product
-            </button>
-          </form>
-        )}
-      </div>
+              <h1 className="text-4xl font-semibold mb-6 text-center text-white tracking-wide">
+                Update Product Details
+              </h1>
+
+              <input
+                {...register("image", { required: true })}
+                className="bg-zinc-800 border border-zinc-700 rounded-xl p-3 text-lg placeholder-gray-400 text-white outline-none focus:ring-2 focus:ring-blue-500"
+                type="text"
+                placeholder="Enter product image URL"
+              />
+              <input
+                {...register("title", { required: true })}
+                className="bg-zinc-800 border border-zinc-700 rounded-xl p-3 text-lg placeholder-gray-400 text-white outline-none focus:ring-2 focus:ring-blue-500"
+                type="text"
+                placeholder="Enter product title"
+              />
+              <input
+                {...register("price", { required: true })}
+                className="bg-zinc-800 border border-zinc-700 rounded-xl p-3 text-lg placeholder-gray-400 text-white outline-none focus:ring-2 focus:ring-blue-500"
+                type="number"
+                placeholder="10.99"
+              />
+              <input
+                {...register("description", { required: true })}
+                className="bg-zinc-800 border border-zinc-700 rounded-xl p-3 text-lg placeholder-gray-400 text-white outline-none focus:ring-2 focus:ring-blue-500"
+                type="text"
+                placeholder="Enter product description"
+              />
+              <input
+                {...register("category", { required: true })}
+                className="bg-zinc-800 border border-zinc-700 rounded-xl p-3 text-lg placeholder-gray-400 text-white outline-none focus:ring-2 focus:ring-blue-500"
+                type="text"
+                placeholder="Enter product categories (comma separated)"
+              />
+
+              <button className="bg-gradient-to-r from-blue-600 to-blue-400 hover:from-blue-700 hover:to-blue-500 p-3 rounded-xl text-white text-xl font-medium transition-all duration-200">
+                Update Product
+              </button>
+              <button
+                className="bg-gradient-to-r from-red-600 to-red-400 hover:from-red-700 hover:to-red-500 p-3 rounded-xl text-white text-xl font-medium transition-all duration-200"
+                onClick={deleteHandler}
+              >
+                Delete Product
+              </button>
+            </form>
+          )}
+        </div>
+      )}
     </div>
   );
 

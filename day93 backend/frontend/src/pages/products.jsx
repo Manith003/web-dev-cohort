@@ -2,15 +2,42 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { asynupdateuser } from "../store/actions/UserActions";
 import { toast } from "react-toastify";
+import { Suspense, useEffect, useState } from "react";
+import axios from "../api/Axiosconfig";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const products = () => {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.userReducer.users);
-  const Products = useSelector((state) => state.productReducer.Products);
+
+  const [Products, setProducts] = useState([]);
+  const [hasMore, sethasMore] = useState(true);
+
+  const fetchProducts = async () => {
+    try {
+      const { data } = await axios.get(
+        `/products?_limit=5&_start=${Products.length}`
+      );
+      if (data.length > 0) {
+        sethasMore(true);
+        setProducts([...Products, ...data]);
+      } else {
+        sethasMore(false);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   const addtocart = (product) => {
     const copyuser = { ...users, cart: [...users.cart] };
-    const x = copyuser.cart.findIndex((item) => item?.product?.id === product.id);
+    const x = copyuser.cart.findIndex(
+      (item) => item?.product?.id === product.id
+    );
     if (x == -1) {
       copyuser.cart.push({ product, quantity: 1 });
       toast.success("Product added to cart!", {
@@ -28,8 +55,6 @@ const products = () => {
         quantity: copyuser.cart[x].quantity + 1,
       };
     }
-
-    console.log(copyuser);
     dispatch(asynupdateuser(users.id, copyuser));
   };
 
@@ -52,7 +77,7 @@ const products = () => {
 
             {/* Title */}
             <h2 className="mb-1 mt-2 text-2xl font-bold text-gray-900">
-              {items.title}
+              {items.title.slice(0, 20)}...
             </h2>
 
             {/* Description */}
@@ -80,13 +105,31 @@ const products = () => {
       </div>
     );
   });
-
-  return Products.length > 0 ? (
-    <div className="flex flex-wrap justify-center items-center gap-5 p-5">
-      {renderedProduct}
-    </div>
-  ) : (
-    <div>No products available</div>
+  return (
+    <InfiniteScroll
+      className="flex flex-wrap justify-center items-center p-5 gap-5"
+      dataLength={Products.length}
+      next={fetchProducts}
+      loader={<h4>Loading...</h4>}
+      hasMore={hasMore}
+      endMessage={
+        <p style={{ textAlign: "center" }}>
+          <b>Yay! You have seen it all</b>
+        </p>
+      }
+    >
+      <div className="flex flex-wrap justify-center items-center p-1 gap-5">
+        <Suspense
+          fallback={
+            <h1 className="text-center text-6xl text-red-600">
+              Loading products...
+            </h1>
+          }
+        >
+          {renderedProduct}
+        </Suspense>
+      </div>
+    </InfiniteScroll>
   );
 };
 

@@ -14,7 +14,7 @@ const Navbar = () => {
 
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex gap-5">
         <NavLink to="/">Home</NavLink>
-        {user && user.isAdmin && (
+        {user && user?.isAdmin && (
           <>
             <NavLink to="/admin/create-product">Create Product</NavLink>
           </>

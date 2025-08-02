@@ -29,7 +29,6 @@ export const asyncloginuser = (userData) => async (dispatch, getState) => {
     const { data } = await axios.get(
       `/users?username=${userData.username}&password=${userData.password}`
     );
-    console.log(data[0]);
     localStorage.setItem("userToken", JSON.stringify(data[0]));
   } catch (error) {
     console.log(error);

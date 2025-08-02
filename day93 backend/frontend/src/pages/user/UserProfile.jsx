@@ -9,9 +9,8 @@ import {
 } from "../../store/actions/UserActions";
 
 const UserProfile = () => {
-  const {
-    userReducer: { users },
-  } = useSelector((state) => state);
+  const { users } = useSelector((state) => state.userReducer);
+console.log("User Profile Data:", users);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -75,7 +74,9 @@ const UserProfile = () => {
 
             <div className="space-y-4">
               <div>
-                <label className="block mb-1 text-sm text-gray-400">Username</label>
+                <label className="block mb-1 text-sm text-gray-400">
+                  Username
+                </label>
                 <input
                   {...register("username")}
                   type="text"
@@ -84,7 +85,9 @@ const UserProfile = () => {
                 />
               </div>
               <div>
-                <label className="block mb-1 text-sm text-gray-400">Email</label>
+                <label className="block mb-1 text-sm text-gray-400">
+                  Email
+                </label>
                 <input
                   {...register("email")}
                   type="email"
@@ -93,7 +96,9 @@ const UserProfile = () => {
                 />
               </div>
               <div>
-                <label className="block mb-1 text-sm text-gray-400">Password</label>
+                <label className="block mb-1 text-sm text-gray-400">
+                  Password
+                </label>
                 <input
                   {...register("password")}
                   type="text"
