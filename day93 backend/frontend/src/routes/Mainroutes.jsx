@@ -14,14 +14,7 @@ const Cart = lazy(() => import("../pages/Cart.jsx"));
 const Mainroutes = () => {
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-       
-            <Products />
-         
-        }
-      />
+      <Route path="/" element={<Products />} />
       <Route
         path="/login"
         element={

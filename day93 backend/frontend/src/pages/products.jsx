@@ -1,37 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { asynupdateuser } from "../store/actions/UserActions";
 import { toast } from "react-toastify";
-import { Suspense, useEffect, useState } from "react";
-import axios from "../api/Axiosconfig";
+import { Suspense } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
+import useInfiniteProducts from "../utils/useInfiniteProducts";
 
 const products = () => {
   const dispatch = useDispatch();
+  const { hasMore, fetchProducts, Products } = useInfiniteProducts();
   const users = useSelector((state) => state.userReducer.users);
-
-  const [Products, setProducts] = useState([]);
-  const [hasMore, sethasMore] = useState(true);
-
-  const fetchProducts = async () => {
-    try {
-      const { data } = await axios.get(
-        `/products?_limit=5&_start=${Products.length}`
-      );
-      if (data.length > 0) {
-        sethasMore(true);
-        setProducts([...Products, ...data]);
-      } else {
-        sethasMore(false);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
 
   const addtocart = (product) => {
     const copyuser = { ...users, cart: [...users.cart] };
@@ -47,7 +25,7 @@ const products = () => {
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
-        progress: undefined,
+        progress: undefined
       });
     } else {
       copyuser.cart[x] = {
@@ -124,7 +102,7 @@ const products = () => {
             <h1 className="text-center text-6xl text-red-600">
               Loading products...
             </h1>
-          }
+          } // so this is not working because of suspense need the component to be lazy loaded. means renderedProduct should be a lazy loaded component
         >
           {renderedProduct}
         </Suspense>
