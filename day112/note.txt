@@ -1,0 +1,6 @@
+animations
+gsap
+framer motion
+lenis/locomotive
+swiper 
+lottis file
