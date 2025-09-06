@@ -1,9 +1,13 @@
 import FacialExpression from "./components/FacialExpression"
+import Navbar from "./components/Navbar"
+import MoodSongs from "./components/MoodSongs"
 
 const App = () => {
   return (
-    <div>
+    <div className="">
+      <Navbar />
       <FacialExpression />
+      <MoodSongs />
     </div>
   )
 }
