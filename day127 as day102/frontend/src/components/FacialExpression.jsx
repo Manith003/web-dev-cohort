@@ -1,7 +1,8 @@
-import  { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import * as faceapi from "face-api.js";
+import axios from "axios";
 
-export default function FacialExpression() {
+export default function FacialExpression({ setSongs }) {
   const videoRef = useRef();
 
   const loadModels = async () => {
@@ -40,6 +41,11 @@ export default function FacialExpression() {
       }
     }
     console.log(_expression);
+    axios
+      .get(`http://localhost:3001/songs?mood=${_expression}`)
+      .then((response) => {
+       setSongs(response.data.songs);
+      });  
   }
 
   useEffect(() => {
@@ -62,7 +68,9 @@ export default function FacialExpression() {
         <div className="flex flex-col gap-5">
           <h2 className="text-4xl font-bold">Live Mood Detection</h2>
           <p className="">
-            Your mood is analyzed instantly using AI. Whether you’re happy, calm, sad, or excited — Moody Player picks the perfect track to match your vibe
+            Your mood is analyzed instantly using AI. Whether you’re happy,
+            calm, sad, or excited — Moody Player picks the perfect track to
+            match your vibe
           </p>
         </div>
         <div className="mt-5">
