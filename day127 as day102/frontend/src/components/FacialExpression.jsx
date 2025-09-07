@@ -53,29 +53,31 @@ export default function FacialExpression({ setSongs }) {
   }, []);
 
   return (
-    <div className="bg-neutral-700 px-45 py-15 flex  gap-5">
-      <div className="w-[40%] flex flex-col items-center">
-        <h1 className="text-2xl font-bold pb-3 pl-1">Let’s find your vibe</h1>
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          className="rounded-4xl bg-amber-700"
-        />
+     <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 py-10 md:py-16">
+      
+      {/* Video Section */}
+      <div className="w-full md:w-1/2 lg:w-2/5 flex flex-col items-center">
+        <h1 className="text-3xl font-bold pb-4 text-center">Let’s find your vibe</h1>
+        <div className="w-full aspect-video overflow-hidden rounded-2xl shadow-lg">
+           <video ref={videoRef} autoPlay muted playsInline className="w-full h-full object-cover" />
+        </div>
       </div>
 
-      <div className="w-[25%] ml-15 flex flex-col justify-center">
-        <div className="flex flex-col gap-5">
-          <h2 className="text-4xl font-bold">Live Mood Detection</h2>
-          <p className="">
-            Your mood is analyzed instantly using AI. Whether you’re happy,
-            calm, sad, or excited — Moody Player picks the perfect track to
-            match your vibe
+      {/* Text and Button Section */}
+      <div className="w-full md:w-1/2 lg:w-3/5 flex flex-col justify-center text-center md:text-left">
+        <div className="flex flex-col gap-4">
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-white leading-tight">
+            Live Mood Detection
+          </h2>
+          <p className="text-neutral-300 text-lg">
+            Your mood is analyzed instantly using AI. Whether you’re happy, calm, or sad — Moody Player picks the perfect track to match your vibe.
           </p>
         </div>
-        <div className="mt-5">
+        <div className="mt-8">
           <button
-            className="bg-neutral-800 text-black py-2 px-4 rounded-xl cursor-pointer hover:bg-blue-600"
+            className="bg-cyan-500 text-black font-bold py-3 px-8 rounded-full text-lg 
+                       cursor-pointer transition-all duration-300 
+                       hover:bg-cyan-400 hover:scale-105"
             onClick={detectMood}
           >
             Detect My Mood

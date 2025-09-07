@@ -1,11 +1,17 @@
-import React from 'react'
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   return (
-    <div className="w-full bg-neutral-700 text-2xl font-bold border-b">
-        <h3 className='py-5 px-5'>Moody Player</h3>
-    </div>
-  )
-}
+    <motion.div
+      className="w-full bg-neutral-900 text-white border-b border-neutral-700 shadow-lg"
+      initial={{ y: -60 }}
+      animate={{ y: 0 }}
+    >
+      <h3 className="py-5 px-6 text-2xl md:text-3xl font-extrabold tracking-wide">
+         Moody Player
+      </h3>
+    </motion.div>
+  );
+};
 
-export default Navbar
+export default Navbar;
