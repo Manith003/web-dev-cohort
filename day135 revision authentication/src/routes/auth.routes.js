@@ -13,8 +13,8 @@ router.post("/register", async (req, res) => {
 
   if (!userExist) {
     const user = await userModel.create({
-      username,
-      password,
+      username: username,
+      password: password
     });
 
     const token = jwt.sign(
