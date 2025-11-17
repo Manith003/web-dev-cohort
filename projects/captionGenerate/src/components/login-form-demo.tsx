@@ -33,7 +33,6 @@ export default function LoginForm({
         { withCredentials: true }
       );
 
-      -
       onLoginSuccess(response.data.user);
       toast.success("WOW! Login Successfully!");
       navigate("/home");
