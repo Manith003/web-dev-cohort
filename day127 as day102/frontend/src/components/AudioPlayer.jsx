@@ -80,7 +80,7 @@ const AudioPlayer = ({ song, isPlaying, setIsPlaying, onNext, onPrev, onClose })
 
           {/* Album Art Placeholder */}
           <div className="aspect-square bg-neutral-700 rounded-lg mb-6 flex items-center justify-center shadow-lg">
-            <video src="./public/video.mp4" className="w-full h-full object-cover" muted autoPlay loop></video>
+            <video src="/video.mp4" className="w-full h-full object-cover" muted autoPlay loop></video>
           </div>
 
           {/* Song Info */}

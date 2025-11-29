@@ -3,6 +3,7 @@ import FacialExpression from "./components/FacialExpression";
 import Navbar from "./components/Navbar";
 import MoodSongs from "./components/MoodSongs";
 import AudioPlayer from "./components/AudioPlayer";
+import { AnimatePresence } from "framer-motion";
 
 const App = () => {
   const [songs, setSongs] = useState([]);
@@ -20,17 +21,20 @@ const App = () => {
     setIsPlaying(false);
     setCurrentSongIndex(null);
   };
-  
+
   // Functions for player controls
   const handleNext = () => {
     setCurrentSongIndex((prevIndex) => (prevIndex + 1) % songs.length);
   };
 
   const handlePrev = () => {
-    setCurrentSongIndex((prevIndex) => (prevIndex - 1 + songs.length) % songs.length);
+    setCurrentSongIndex(
+      (prevIndex) => (prevIndex - 1 + songs.length) % songs.length
+    );
   };
 
-  const currentSong = currentSongIndex !== null ? songs[currentSongIndex] : null;
+  const currentSong =
+    currentSongIndex !== null ? songs[currentSongIndex] : null;
 
   return (
     <div className="bg-neutral-900 text-white min-h-screen font-sans">
@@ -45,9 +49,9 @@ const App = () => {
           />
         )}
       </div>
-      
+
       {/* Conditionally render the animated AudioPlayer modal */}
-      {currentSong && (
+      {/* {currentSong && (
         <AudioPlayer
           song={currentSong}
           isPlaying={isPlaying}
@@ -56,7 +60,20 @@ const App = () => {
           onPrev={handlePrev}
           onClose={handleClosePlayer}
         />
-      )}
+      )} */}
+      <AnimatePresence>
+        {currentSong && (
+          <AudioPlayer
+            key={currentSongIndex}
+            song={currentSong}
+            isPlaying={isPlaying}
+            setIsPlaying={setIsPlaying}
+            onNext={handleNext}
+            onPrev={handlePrev}
+            onClose={handleClosePlayer}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };
